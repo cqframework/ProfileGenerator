@@ -1,0 +1,17 @@
+<profileMetadata>
+    <sharedMetadata>
+        <profileRootPath>http://hl7.org/quick/profile/</profileRootPath>
+	    <profileBaseVersion>0.0.1</profileBaseVersion>
+	    <profilePublisher>Clinical Quality Framework (CQF)</profilePublisher>
+	    <profileEmailContact>admin@cqf.org</profileEmailContact>
+	    <profileFhirVersion>dstu</profileFhirVersion>
+    </sharedMetadata>
+    <profiles>
+        <profile name="ConditionOccurrence">
+            <profileText>a</profileText>
+            <profileDescription>Profile for the QUICK ConditionOccurrence Class</profileDescription>
+            <profileStatus>draft</profileStatus>
+            <profileRequirements>Profile shall do xyz</profileRequirements>
+        </profile>
+    </profiles>
+</profileMetadata>
