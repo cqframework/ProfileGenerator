@@ -6,7 +6,7 @@ A framework for the generation of FHIR profiles from a QUICK model definition
 License
 ===============
 
-Copyright (C) 2013 by Cognitive Medical Systems, Inc.
+Copyright (C) 2014 by Cognitive Medical Systems, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
