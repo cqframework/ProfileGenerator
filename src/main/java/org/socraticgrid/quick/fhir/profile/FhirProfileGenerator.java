@@ -1,6 +1,7 @@
 package org.socraticgrid.quick.fhir.profile;
 
 import java.io.ByteArrayOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -330,7 +331,7 @@ public class FhirProfileGenerator {
 	/**
 	 * Returns true if the type of the attribute argument is a core FHIR type.
 	 * 
-	 * @param attribute The attribute whose type we are checking.
+	 * @param name The attribute whose type we are checking.
 	 * @return
 	 */
 	public boolean hasNativeFhirType(String name) {
@@ -374,6 +375,11 @@ public class FhirProfileGenerator {
 		} catch(Exception e) {
 			throw new RuntimeException("Error marshalling profile to XML", e);
 		}
-		return new String(baos.toByteArray());
+		try {
+			return baos.toString("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// use default character set
+			return baos.toString();
+		}
 	}
 }
