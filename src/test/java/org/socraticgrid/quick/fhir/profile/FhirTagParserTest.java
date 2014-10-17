@@ -57,6 +57,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 		UmlProperty property = new UmlProperty("attributeName");
 		property.setLow(0);
 		property.setHigh(-1);
+		property.setSource(new UmlClass("SourceClass"));
 		return property;
 	}
 
