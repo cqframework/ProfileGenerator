@@ -96,12 +96,12 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
         String high = null;
         if ( ctx.INTEGER()!=null && mapping.getDestination() != null) {
         	low = ctx.INTEGER().getText();
-            mapping.getDestination().setLow(new Integer(low));
+        	mapping.getDestination().setLow(Integer.valueOf(low));
         }
         if ( ctx.high()!=null && mapping.getDestination() != null) {
         	high = tokens.getText(ctx.high());
         	high = (high.equals("*"))?"-1":high;
-        	mapping.getDestination().setHigh(new Integer(high));
+        	mapping.getDestination().setHigh(Integer.valueOf(high));
         }
 	}
 

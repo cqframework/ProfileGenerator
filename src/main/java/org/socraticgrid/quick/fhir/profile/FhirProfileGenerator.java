@@ -66,7 +66,8 @@ public class FhirProfileGenerator {
 	 * differential for the target structure according to the 
 	 * mappings specified as TaggedValue annotations in the QUICK model.
 	 * 
-	 * @param umlClass
+	 * @param source
+	 * @param target
 	 */
 	public Profile generateSimpleProfile(UmlClass source, UmlClass target) {//TODO Build target from structure tag information
 		Profile profile = new Profile();
@@ -353,7 +354,7 @@ public class FhirProfileGenerator {
 	 * 
 	 * TODO: Handle the case where the attribute has tag: profile.fhir.element.type.profile
 	 * 
-	 * @param attribute The attribute whose type we are checking.
+	 * @param name The attribute whose type we are checking.
 	 * @return
 	 */
 	public boolean hasProfiledFhirType(String name) {

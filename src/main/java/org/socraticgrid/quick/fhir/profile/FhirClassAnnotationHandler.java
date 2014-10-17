@@ -31,7 +31,7 @@ public class FhirClassAnnotationHandler {
 	/**
 	 * The UML class we are processing.
 	 */
-	private UmlClass umlClass;
+	private final UmlClass umlClass;
 	private UmlClass targetResource;
 	
 	/**
@@ -271,10 +271,10 @@ public class FhirClassAnnotationHandler {
 				if(components[5].equals("cardinality")) {
 					CardinalityRange cardinalityConstraint = new CardinalityRange();
 					if(components[5].equals("low")) {
-						cardinalityConstraint.setLow(new Integer(tag.getValue()));
+						cardinalityConstraint.setLow(Integer.valueOf(tag.getValue()));
 					}
 					if(components[6].equals("high")) {
-						cardinalityConstraint.setHigh(new Integer(tag.getValue()));
+						cardinalityConstraint.setHigh(Integer.valueOf(tag.getValue()));
 					}
 					property.addCardinalityConstraint(umlClass.getName(), cardinalityConstraint);
 				}
@@ -362,7 +362,7 @@ public class FhirClassAnnotationHandler {
 	/**
 	 * Flags a property for removal when collecting properties from the class.
 	 * 
-	 * @param umlProperty
+	 * @param attribute
 	 */
 	public void subtractProperty(UmlProperty attribute) {
 		subtractedProperties.add(attribute);

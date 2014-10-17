@@ -116,30 +116,30 @@ public class FhirAttributeAnnotationHandler {
 				if(tail.equalsIgnoreCase("target")) {
 					property.setName(tag.getValue());
 				}
-				if(tail.equalsIgnoreCase("target_context")) {
+				else if(tail.equalsIgnoreCase("target_context")) {
 					property.addTag(new TaggedValue("profile.fhir.element.target_context", tag.getValue()));
 				}
-				if(tail.equalsIgnoreCase("type")) { //TODO Be consistent as to whether case is relevant or not
+				else if(tail.equalsIgnoreCase("type")) { //TODO Be consistent as to whether case is relevant or not
 					property.addTag(new TaggedValue("profile.fhir.element.type", tag.getValue()));
 					property.addType((UmlClass)model.getObjectByName(tag.getValue()));
 				}
-				if(tail.equalsIgnoreCase("source")) {
+				else if(tail.equalsIgnoreCase("source")) {
 					property.addTag(new TaggedValue("profile.fhir.element.source", tag.getValue()));
 				}
-				if(tail.equalsIgnoreCase("source_context")) {
+				else if(tail.equalsIgnoreCase("source_context")) {
 					property.addTag(new TaggedValue("profile.fhir.element.source_context", tag.getValue()));
 				}
-				if(tail.equalsIgnoreCase("source_type")) {
+				else if(tail.equalsIgnoreCase("source_type")) {
 					//TODO Handle
 				}
-				if(tail.equalsIgnoreCase("extension")) {
+				else if(tail.equalsIgnoreCase("extension")) {
 					property.addTag(new TaggedValue("profile.fhir.element.extension", "true"));
 				}
-				if(tail.equalsIgnoreCase("cardinality_low")) {
+				else if(tail.equalsIgnoreCase("cardinality_low")) {
 					property.addTag(new TaggedValue("profile.fhir.element.cardinality.low", tag.getValue()));
 					property.setLow(Integer.parseInt(tag.getValue()));
 				}
-				if(tail.equalsIgnoreCase("cardinality_high")) {
+				else if(tail.equalsIgnoreCase("cardinality_high")) {
 					property.addTag(new TaggedValue("profile.fhir.element.cardinality.high", tag.getValue()));
 					if(tag.getValue().equals("*")) {
 						property.setHigh(-1);
