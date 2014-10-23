@@ -36,11 +36,16 @@ public class FhirTagParserTest {//TODO Add negative cases
 	private final String skipElementWithBoolean = "profile.fhir.element.skip=true";
 	private final String equivalentElement = "profile.fhir.element.ClinicalStatement.identifier.equivalent";
 	private final String typeAnnotation = "profile.fhir.element.Condition.location[BodySite].laterality=Condition.location.laterality(cardinality=0..1,type=CodeableConcept,extension=true)";
+	private final String badTag1 = "profile.fhir.ClinicalStatement.statementAuthor=Other.author(extension=false)";
+	private final String structureName = "profile.fhir.structure.name=CommunicationProposalOccurrence";
+	private final String structurePurpose = "profile.fhir.structure.purpose=Represents a clinical statement stating that a communication proposal has been made.";
 	
 	private final UmlClass targetResource = new UmlClass("Condition");
+	private FhirTagParseErrorListener errorListener;
 
 	@Before
 	public void setUp() throws Exception {
+		errorListener = new FhirTagParseErrorListener();
 	}
 
 	@After
@@ -64,8 +69,9 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testCore() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(core);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(core, errorListener);
 		    OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, setUpProperty(), targetResource);
+		    assertEquals(0, errorListener.getParseErrorCount());
 		    assertEquals("Condition.location.anatomicalLocation", mapping.getSourcePath());
 			assertEquals("Condition.location.code", mapping.getDestinationPath());
 			assertFalse(mapping.isExtension());
@@ -77,8 +83,9 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testCoreWithParameters() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(coreWithParameters);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(coreWithParameters, errorListener);
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 			assertEquals("anatLoc", mapping.getDestination().getName());
 			assertEquals(new Integer(1), mapping.getDestination().getLow());
 			assertEquals(new Integer(2), mapping.getDestination().getHigh());
@@ -94,8 +101,9 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testTypeAnnotation() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(typeAnnotation);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(typeAnnotation, errorListener);
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 			assertEquals(new Integer(0), mapping.getDestination().getLow());
 			assertEquals(new Integer(1), mapping.getDestination().getHigh());
 			assertEquals("Condition.location[BodySite].laterality", mapping.getSourcePath());
@@ -110,8 +118,9 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testExtensionOnly() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(extensionOnly);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(extensionOnly, errorListener);
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 			assertTrue(mapping.isExtension());
 		} catch(RecognitionException re) {
 			fail();
@@ -121,9 +130,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testCardinalityUnlimited() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(cardinalityUnlimited);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(cardinalityUnlimited, errorListener);
 			CardinalityContext context = parser.cardinality();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 		} catch(RecognitionException re) {
 			fail();
 		}
@@ -132,9 +142,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testCardinalityOptional() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(cardinalityOptional);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(cardinalityOptional, errorListener);
 			CardinalityContext context = parser.cardinality();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 		} catch(RecognitionException re) {
 			fail();
 		}
@@ -143,9 +154,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testAlias() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(alias);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(alias, errorListener);
 			AliasRuleContext context = parser.aliasRule();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 		} catch(RecognitionException re) {
 			fail();
 		}
@@ -154,10 +166,46 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testExtension() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(extension);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(extension, errorListener);
 			ExtensionContext context = parser.extension();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 		} catch(RecognitionException re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testBadTag1() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(badTag1, errorListener);
+			parser.elementRule();
+			if(!errorListener.hasErrors()) {
+				fail();
+			}
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testStructureName() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(structureName, errorListener);
+			parser.handleStructureRule();
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testStructurePurpose() { //TODO Revisit why this test works
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(structurePurpose, errorListener);
+			System.out.println(parser.structurePurposeRule().toStringTree());
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
 			fail();
 		}
 	}
@@ -165,9 +213,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testSkipElement() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(skipElement);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(skipElement, errorListener);
 			SkipElementRuleContext context = parser.skipElementRule();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 			assertNull(mapping.getDestination());
 			assertTrue(mapping.isUnmapped());
 			assertEquals("profile.fhir.element.skip", mapping.getRationale());
@@ -179,9 +228,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testSkipElementWithBoolean() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(skipElementWithBoolean);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(skipElementWithBoolean, errorListener);
 			SkipElementRuleContext context = parser.skipElementRule();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 		} catch(RecognitionException re) {
 			fail();
 		}
@@ -190,9 +240,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 	@Test
 	public void testEquivalentElement() {
 		try {
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(equivalentElement);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(equivalentElement, errorListener);
 			EquivalentElementRuleContext context = parser.equivalentElementRule();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
 			assertNotNull(mapping.getDestination());
 			assertEquals("profile.fhir.element.ClinicalStatement.identifier.equivalent", mapping.getRationale());
 			assertEquals("attributeName", mapping.getDestination().getName());
@@ -207,7 +258,8 @@ public class FhirTagParserTest {//TODO Add negative cases
 	public void testGetPropertyMappings() {
 		UmlProperty property = setUpProperty();
 		property.addTag(new TaggedValue("profile.fhir.element.Condition.location.anatomicalLocation","Condition.location.code(cardinality=1..2, alias=anatLoc, type=CodeableConcept, extension=true)"));
-		List<OneToOnePropertyMapping> mappings = MappingAnnotationListener.getPropertyMappings(property, targetResource);
+		List<OneToOnePropertyMapping> mappings = MappingAnnotationListener.getPropertyMappings(property, targetResource, errorListener);
+		assertEquals(0, errorListener.getParseErrorCount());
 		assertEquals(1, mappings.size());
 		assertEquals("Condition.location.anatomicalLocation", mappings.get(0).getSourcePath());
 	}
@@ -216,6 +268,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 	public void testRelativePath() {
 		String canonicalPath = "Condition.location.code";
 		String relativePath = MappingAnnotationListener.getAttributeRelativePath(canonicalPath);
+		assertEquals(0, errorListener.getParseErrorCount());
 		assertEquals("location.code", relativePath);
 	}
 	
@@ -223,6 +276,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 	public void testGetContainingResource() {
 		String canonicalPath = "Condition.location.code";
 		String resource = MappingAnnotationListener.getContainingResource(canonicalPath);
+		assertEquals(0, errorListener.getParseErrorCount());
 		assertEquals("Condition", resource);
 	}
 }	

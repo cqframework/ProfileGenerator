@@ -1,5 +1,7 @@
 package org.socraticgrid.quick.fhir.profile;
 
+import static org.junit.Assert.fail;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -108,8 +110,12 @@ public class FhirClassAnnotationHandler {
 	 */
 	public List<OneToOnePropertyMapping> generateMappingsForClassProperties() {
 		List<OneToOnePropertyMapping> mappings = new ArrayList<>();
+		FhirTagParseErrorListener errorListener = new FhirTagParseErrorListener();//TODO For now, use a single error listener for all mappings.
 		for(UmlProperty property : getCollectedProperties()) {
-			mappings.addAll(MappingAnnotationListener.getPropertyMappings(property,targetResource));
+			mappings.addAll(MappingAnnotationListener.getPropertyMappings(property,targetResource, errorListener));
+		}
+		if(errorListener.hasErrors()) {
+			throw new RuntimeException("Error processing mapping tags. " + errorListener.getParseErrorCount() + " error(s) found. See logs for details.");
 		}
 		return mappings;
 	}
@@ -226,6 +232,9 @@ public class FhirClassAnnotationHandler {
 	public void processClassScopedAttributeNew() {//TODO Replace others with this one
 		List<TaggedValue> tags = umlClass.getTags();
 		for(TaggedValue tag: tags) {
+			if(!validateTag(tag)) {
+				throw new RuntimeException(tag + " has an invalid syntax!");
+			}
 			if(tag.getKey().startsWith("profile.fhir.element")) {
 				FhirAnnotation annotation = new FhirAnnotation(tag.getKey());
 				String context = annotation.get(3);
@@ -296,6 +305,17 @@ public class FhirClassAnnotationHandler {
 			targetContext = getStructureType();
 		}
 		return targetContext;
+	}
+	
+	public boolean validateTag(TaggedValue tag) {
+		boolean success = true;
+		FhirTagParseErrorListener errorListener = new FhirTagParseErrorListener();
+		FhirTagParser parser = MappingAnnotationListener.setUpParser(tag.toString(), errorListener);
+		parser.handleTagRule();
+		if(errorListener.hasErrors()) {
+			success = false;
+		}
+		return success;
 	}
 	
 	public String getUmlClassName() {

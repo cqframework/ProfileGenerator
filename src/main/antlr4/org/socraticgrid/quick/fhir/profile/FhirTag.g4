@@ -3,6 +3,18 @@ import CommonLexerRules; // includes all rules from CommonLexerRules.g4
 
 // Parser Rules
 
+handleTagRule
+	: handleStructureRule
+	| handleElementRule
+	;
+
+handleStructureRule
+	: structureNameRule
+	| structurePublishRule
+	| structurePurposeRule
+	| structureTypeRule
+	;
+
 handleElementRule
 	: skipElementRule
 	| equivalentElementRule
@@ -21,12 +33,32 @@ elementRule
 	: profiledElement DELIM pathExpression EQUALS pathExpression parameters? 
 	;
 	
+structureNameRule
+	: profiledStructure DELIM NAME EQUALS IDENTIFIER
+	;
+	
+structurePublishRule
+	: profiledStructure DELIM PUBLISH EQUALS BOOLEAN
+	;
+	
+structurePurposeRule
+	: profiledStructure DELIM PURPOSE EQUALS IDENTIFIER (IDENTIFIER|DELIM)* //TODO Fix this.
+	;
+	
+structureTypeRule
+	: profiledStructure DELIM TYPE EQUALS IDENTIFIER
+	;
+	
 profile
 	: PROFILE DELIM MODEL
 	;
 	
 profiledElement
 	: profile DELIM ELEMENT
+	;
+	
+profiledStructure
+	: profile DELIM STRUCTURE
 	;
 	
 pathExpression
@@ -92,6 +124,10 @@ ELEMENT
 	: 'element'
 	;
 	
+STRUCTURE
+	: 'structure'
+	;
+	
 ALIAS
 	: 'alias'
 	;
@@ -106,6 +142,18 @@ EXTENSION
 	
 TYPE
 	: 'type'
+	;
+	
+NAME
+	: 'name'
+	;
+	
+PUBLISH
+	: 'publish'
+	;
+	
+PURPOSE
+	: 'purpose'
 	;
 	
 BOOLEAN
@@ -151,7 +199,7 @@ SAMEAS
 RANGE_DELIM
 	: '..'
 	;
-	
+
 WS
 	: ( '\t' | ' ' | '\r' | '\n'| '\u000C' )+ -> skip
 	;

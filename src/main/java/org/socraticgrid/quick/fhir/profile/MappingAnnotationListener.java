@@ -164,11 +164,13 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 	 * @param input
 	 * @return
 	 */
-	public static FhirTagParser setUpParser(String input) {
+	public static FhirTagParser setUpParser(String input, FhirTagParseErrorListener errorListener) {
 		FhirTagLexer lexer = new FhirTagLexer(new ANTLRInputStream(input));
 		FhirTagParser parser = new FhirTagParser(new CommonTokenStream(lexer));
 		parser.removeErrorListeners();
-		parser.addErrorListener(new TestErrorListener());
+		if(errorListener != null) {
+			parser.addErrorListener(errorListener);
+		}
 		return parser;
 	}
 	
@@ -208,31 +210,14 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 	 * @param property
 	 * @return
 	 */
-	public static List<OneToOnePropertyMapping> getPropertyMappings(UmlProperty property, UmlClass targetResource) {
+	public static List<OneToOnePropertyMapping> getPropertyMappings(UmlProperty property, UmlClass targetResource, FhirTagParseErrorListener errorListener) {
 		List<OneToOnePropertyMapping> mappings = new ArrayList<OneToOnePropertyMapping>();
 		List<TaggedValue> tags = property.getTagsWithPrefix("profile.fhir.element");
 		for(TaggedValue tag : tags) {
 			String mappingString = tag.toString();
-			FhirTagParser parser = MappingAnnotationListener.setUpParser(mappingString);
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(mappingString, errorListener);
 			mappings.add(MappingAnnotationListener.retrieveMapping(parser, property, targetResource));
 		}
 		return mappings;
-	}
-	
-	public static class TestErrorListener extends BaseErrorListener {
-	    @Override
-	    public void syntaxError(Recognizer<?, ?> recognizer,
-	                            Object offendingSymbol,
-	                            int line, int charPositionInLine,
-	                            String msg,
-	                            RecognitionException e)
-	    {
-	    	List<String> stack = ((Parser)recognizer).getRuleInvocationStack();
-	        Collections.reverse(stack);
-	        System.err.println("rule stack: "+stack);//Log rather than sysout
-	        System.err.println("line "+line+":"+charPositionInLine+" at "+
-	                           offendingSymbol+": "+msg);
-	        throw new RuntimeException("error processing tag");
-	    }
 	}
 }

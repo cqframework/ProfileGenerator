@@ -2785,6 +2785,11 @@
 				</packagedElement>
 			</packagedElement>
 		</packagedElement>
+		<thecustomprofile:profile.fhir.element.Communication.medium base_Property="EAID_069CADDA_8E20_4b3c_87A0_654270505803" profile.fhir.element.Communication.medium="DestinationConcept.medium(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Communication.message base_Property="EAID_21786675_13E0_4392_8DC7_2E12449C7394" profile.fhir.element.Communication.message="DestinationConcept.message(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Communication.recipient base_Property="EAID_BF3214B5_A4B1_4dda_AD72_8786EF4E28E5" profile.fhir.element.Communication.recipient="DestinationConcept.recipient(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Communication.relatedStatement base_Property="EAID_EB2DC572_44AC_4e39_92EF_E4598D593720" profile.fhir.element.Communication.relatedStatement="DestinationConcept.relatedStatement(type=Any,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Communication.sender base_Property="EAID_4686E6A3_C3A2_46bd_B460_0A410837917D" profile.fhir.element.Communication.sender="DestinationConcept.sender(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.identifier.equivalent base_Property="EAID_0F7F2CFF_B01A_4b83_AD52_30224536928E" profile.fhir.element.ClinicalStatement.identifier.equivalent="true"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.profileId base_Property="EAID_7B6A9509_3949_4476_97AC_CC6AB60F6917" profile.fhir.element.ClinicalStatement.profileId="DestinationConcept.profileId(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.skip base_Property="EAID_7E7802BE_E36E_48f1_B349_193DA57207C1" profile.fhir.element.skip="true"/>
@@ -2876,20 +2881,34 @@
 		<thecustomprofile:is-a base_Generalization="EAID_0D7B19D2_0015_4a8e_B5D2_B9E6E62E3367"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_2D2D6DFF_3155_425b_A67A_340549D7DD26"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_8963A820_5E9E_4bc4_BFB1_28677D1F0860"/>
+		<thecustomprofile:profile.fhir.structure.type base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.type="Other"/>
+		<thecustomprofile:profile.fhir.element.Proposal.prnReason base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.prnReason="Other.prnReason(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.expectedPerformanceTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.expectedPerformanceTime="Other.expectedPerformanceTime(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementDateTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.statementDateTime="Other.created(type=date,extension=false)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.subject base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.subject="Other.subject(cardinality=1..1,type=Any, extension=false)"/>
+		<thecustomprofile:profile.fhir.structure.purpose base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.purpose="Represents a clinical statement stating that a communication proposal has been made."/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementAuthor base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.statementAuthor="Other.author(type=Practitioner,type=Patient,type=RelatedPerson,extension=false)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.urgency base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.urgency="Other.urgency(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.encounter base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.encounter="Other.encounter(extension=true)"/>
+		<thecustomprofile:profile.fhir.structure.name base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.name="CommunicationProposalOccurrence"/>
+		<thecustomprofile:profile.fhir.structure.publish base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.publish="true"/>
+		<thecustomprofile:profile.fhir.element.Proposal.originationMode base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.originationMode="Other.originationMode(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.proposedAtTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.proposedAtTime="Other.proposedAtTime(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.additionalText="Other.text(extension=true)"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_93DBDAB9_AA93_41a2_B39D_2F49BFA0F2EE"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_D4A823B1_D887_4245_AC19_C8AC0FB18870"/>
 		<thecustomprofile:is-a base_Generalization="EAID_EB198633_3972_4f26_A3C1_75429F8E003A"/>
 		<thecustomprofile:profile.fhir.structure.type base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.structure.type="Condition"/>
-		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementDateTime base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.statementDateTime="Condition.recordedOn(alias=recordedOn,extension=true)"/>
-		<thecustomprofile:profile.fhir.element.Observation.observedAtTime base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.Observation.observedAtTime="Condition.dateAsserted(alias=dateAsserted, extension=false)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementDateTime base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.statementDateTime="Condition.recordedOn(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Observation.observedAtTime base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.Observation.observedAtTime="Condition.dateAsserted(extension=false)"/>
 		<thecustomprofile:profile.fhir.structure.purpose base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.structure.purpose="Represents a clinical statement stating the occurrence of a condition in the QUICK model."/>
-		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementAuthor base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.statementAuthor="Condition.asserter(alias=asserter,type=Practitioner,type=Patient,extension=false)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementAuthor base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.statementAuthor="Condition.asserter(type=Practitioner,type=Patient,extension=false)"/>
 		<thecustomprofile:profile.fhir.structure.name base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.structure.name="ConditionOccurrence"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.encounter.equivalent base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.encounter.equivalent="true"/>
 		<thecustomprofile:profile.fhir.structure.publish base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.structure.publish="true"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.subject.equivalent base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.subject.equivalent="true"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementSource base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.statementSource="Condition.statementSource(type=Device,type=Organization,type=RelatedPerson,type=Patient,type=Practitioner,extension=true)"/>
-		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.additionalText="Condition.notes(cardinality=0..1,alias=notes,extension=false)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D" profile.fhir.element.ClinicalStatement.additionalText="Condition.notes(cardinality=0..1,extension=false)"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_67E85AE7_B765_480b_8FFF_31B27891BC4D"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_94ED9ED4_71CC_42c0_B5DD_99C81C34968F"/>
 		<thecustomprofile:is-a base_Generalization="EAID_9589A891_1926_436a_A925_CFC35E39FC62"/>
@@ -3100,7 +3119,7 @@
 			<element xmi:idref="EAID_81A2ECEA_E56C_483d_9988_D81AA7EF2FDA" xmi:type="uml:Class" name="Communication" scope="public">
 				<model package="EAPK_313F51AD_9A91_4a2f_9FA0_4A4E43F75D0F" tpos="0" ea_localid="66" ea_eleType="element"/>
 				<properties documentation="A communication is a message sent between a sender and a recipient for a purpose and about a topic. Messages may be multipart each part having its own content-type." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="MKRAMER" version="1.0" phase="1.0" created="2013-10-03 13:01:07" modified="2014-07-11 09:10:51" complexity="1" status="Proposed"/>
+				<project author="MKRAMER" version="1.0" phase="1.0" created="2013-10-03 13:01:07" modified="2014-10-22 15:17:12" complexity="1" status="Proposed"/>
 				<code gentype="Java" genfile="C:\Users\Aziz\Downloads\Working\code\QIDAM Class Model\CommunicationDescriptor.java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
@@ -3120,7 +3139,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_8F93517B_9674_41bc_A913_21DC92CD3FCC" name="profile.fhir.element.Communication.medium" value="DestinationConcept.medium(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={AAA471E2-912B-452d-BF86-44584C07FECE}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={069CADDA-8E20-4b3c-87A0-654270505803}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_21786675_13E0_4392_8DC7_2E12449C7394" name="message" scope="Public">
@@ -3135,7 +3156,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_0313B222_3A12_4f30_95B8_7C708B23ABEE" name="profile.fhir.element.Communication.message" value="DestinationConcept.message(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={0FD4F1ED-31FA-432b-852D-8A6DAD977ECF}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={21786675-13E0-4392-8DC7-2E12449C7394}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_BF3214B5_A4B1_4dda_AD72_8786EF4E28E5" name="recipient" scope="Public">
@@ -3150,7 +3173,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_4D28D11D_1337_4cc0_A698_6AAA7A083C1F" name="profile.fhir.element.Communication.recipient" value="DestinationConcept.recipient(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={5A477A03-46C9-4558-A20C-196B0CC40997}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={BF3214B5-A4B1-4dda-AD72-8786EF4E28E5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_EB2DC572_44AC_4e39_92EF_E4598D593720" name="relatedStatement" scope="Public">
@@ -3165,7 +3190,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_E6D7DCA1_0ECD_4c85_A656_012D0BCFF464" name="profile.fhir.element.Communication.relatedStatement" value="DestinationConcept.relatedStatement(type=Any,extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={C77E64F5-CF51-475e-9BBA-184FD929A731}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={EB2DC572-44AC-4e39-92EF-E4598D593720}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_4686E6A3_C3A2_46bd_B460_0A410837917D" name="sender" scope="Public">
@@ -3180,7 +3207,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_6EF914DF_73BC_4682_B490_46B839F02A98" name="profile.fhir.element.Communication.sender" value="DestinationConcept.sender(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={3927C9B6-0AF4-483e-A1A7-E6CFE41346CC}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={4686E6A3-C3A2-46bd-B460-0A410837917D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
@@ -11855,7 +11884,7 @@
 			<element xmi:idref="EAID_084990D4_0C33_4707_9920_4D28AEDBCCF6" xmi:type="uml:Class" name="Observable" scope="public">
 				<model package="EAPK_A504C795_B8B9_46a1_80E9_D000CC42CEE9" tpos="0" ea_localid="23" ea_eleType="element"/>
 				<properties documentation="The outcome of medical investigations or diagnostics. &quot;&lt;i&gt;Clinical findings&lt;/i&gt;&quot; are the observations made during the history and physical." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
-				<project author="MKRAMER" version="1.0" phase="1.0" created="2013-09-23 09:54:00" modified="2014-10-08 21:18:10" complexity="1" status="Proposed"/>
+				<project author="MKRAMER" version="1.0" phase="1.0" created="2013-09-23 09:54:00" modified="2014-10-09 22:37:16" complexity="1" status="Proposed"/>
 				<code gentype="Java" genfile="C:\Users\Aziz\Downloads\Working\code\QIDAM Class Model\ObservableDescriptor.java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
@@ -12575,11 +12604,26 @@
 			<element xmi:idref="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" xmi:type="uml:Class" name="CommunicationProposalOccurrence" scope="public">
 				<model package="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5" tpos="0" ea_localid="1377" ea_eleType="element"/>
 				<properties documentation="An occurrence of a proposal to communicate. E.g., the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.&#xA;&#xA;&#xA;&lt;b&gt;Example&lt;/b&gt;&#xA;&lt;u&gt;Expression from source knowledge artifact&lt;/u&gt;&#xA;Notify San Diego County Department of Health and Human Services about case of Pertussis&#xA;&#xA;&lt;u&gt;Expression in CQL+QUICK&lt;/u&gt;&#xA;let PertussisNotificationSD = &#xA;  [Communication, Proposal] N where&#xA;    N.recipient is Organization&#xA;      and&#xA;    (N.recipient as Organization).name = &quot;San Diego County Department of Health and Human Services&quot;&#xA;      and&#xA;    exists (C.relatedStatement P where&#xA;        P is ConditionOccurrence&#xA;        and (P as ConditionOccurrence).code in &quot;Pertussis Diagnosis Value Set&quot;&#xA;    )" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 17:12:33" modified="2014-07-30 17:32:42" complexity="1" status="Proposed"/>
+				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 17:12:33" modified="2014-10-22 15:36:08" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_0AA42CF9_1C21_4938_99A8_E681CD3244FD" name="profile.fhir.element.ClinicalStatement.additionalText" value="Other.text(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_B9C1E2E7_A3F7_4450_959A_C111F2E842BD" name="profile.fhir.element.ClinicalStatement.encounter" value="Other.encounter(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_D75D7308_6210_4a99_8B95_882E9F82820D" name="profile.fhir.element.ClinicalStatement.statementAuthor" value="Other.author(type=Practitioner,type=Patient,type=RelatedPerson,extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_49EE1D3C_F7F3_481a_9CE3_9B3C054D30D8" name="profile.fhir.element.ClinicalStatement.statementDateTime" value="Other.created(type=date,extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_BA91C182_2369_43c7_AFD7_E5407BEC289C" name="profile.fhir.element.ClinicalStatement.subject" value="Other.subject(cardinality=1..1,type=Any, extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_E688CBE9_2573_41a9_A1A7_8B82173DB572" name="profile.fhir.element.Proposal.expectedPerformanceTime" value="Other.expectedPerformanceTime(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_7384A326_16D1_4beb_9156_ED1C25787A94" name="profile.fhir.element.Proposal.originationMode" value="Other.originationMode(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_753A8D60_614E_4741_ACFD_9052E0A074DF" name="profile.fhir.element.Proposal.prnReason" value="Other.prnReason(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_3A01AB5E_D7B3_476a_B82A_E8043B550F10" name="profile.fhir.element.Proposal.proposedAtTime" value="Other.proposedAtTime(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_23E1FF19_D658_47ff_A302_DB7F75C6459E" name="profile.fhir.element.Proposal.urgency" value="Other.urgency(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_ADBDEBD5_993A_46f8_B846_2BC3889A3963" name="profile.fhir.structure.name" value="CommunicationProposalOccurrence" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_4BAC8B59_1BE3_420a_B201_4C09B058B3B7" name="profile.fhir.structure.publish" value="true" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_DA825E8B_6831_40e9_9C12_1FB9F890B734" name="profile.fhir.structure.purpose" value="Represents a clinical statement stating that a communication proposal has been made." modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_01569441_46EC_428b_9AAF_8343E0CF0F96" name="profile.fhir.structure.type" value="Other" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+				</tags>
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="statement"/>
 				<links>
@@ -12596,13 +12640,13 @@
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
 				<tags>
-					<tag xmi:id="EAID_637D1505_59CD_464b_87AA_8EA50C9D725F" name="profile.fhir.element.ClinicalStatement.additionalText" value="Condition.notes(cardinality=0..1,alias=notes,extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
+					<tag xmi:id="EAID_637D1505_59CD_464b_87AA_8EA50C9D725F" name="profile.fhir.element.ClinicalStatement.additionalText" value="Condition.notes(cardinality=0..1,extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_E18A5166_4F5D_4c0a_A36F_73B3DAE006A8" name="profile.fhir.element.ClinicalStatement.encounter.equivalent" value="true" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
-					<tag xmi:id="EAID_2169038B_2E13_499c_9C4C_EEF14E99A427" name="profile.fhir.element.ClinicalStatement.statementAuthor" value="Condition.asserter(alias=asserter,type=Practitioner,type=Patient,extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
-					<tag xmi:id="EAID_495AC1A3_B06A_4f05_AD11_299E9C5BB0D3" name="profile.fhir.element.ClinicalStatement.statementDateTime" value="Condition.recordedOn(alias=recordedOn,extension=true)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
+					<tag xmi:id="EAID_2169038B_2E13_499c_9C4C_EEF14E99A427" name="profile.fhir.element.ClinicalStatement.statementAuthor" value="Condition.asserter(type=Practitioner,type=Patient,extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
+					<tag xmi:id="EAID_495AC1A3_B06A_4f05_AD11_299E9C5BB0D3" name="profile.fhir.element.ClinicalStatement.statementDateTime" value="Condition.recordedOn(extension=true)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_6AFD2DB5_C61A_4cbc_9940_9BAE276AB9FA" name="profile.fhir.element.ClinicalStatement.statementSource" value="Condition.statementSource(type=Device,type=Organization,type=RelatedPerson,type=Patient,type=Practitioner,extension=true)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_D5629A22_5A51_4e4a_9DAC_BB11D2211F5A" name="profile.fhir.element.ClinicalStatement.subject.equivalent" value="true" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
-					<tag xmi:id="EAID_B5820023_B130_4771_BCA4_2CC7CAF69726" name="profile.fhir.element.Observation.observedAtTime" value="Condition.dateAsserted(alias=dateAsserted, extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
+					<tag xmi:id="EAID_B5820023_B130_4771_BCA4_2CC7CAF69726" name="profile.fhir.element.Observation.observedAtTime" value="Condition.dateAsserted(extension=false)" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_81BEA2D5_14CD_4123_A33B_FD5067F9CCBB" name="profile.fhir.structure.name" value="ConditionOccurrence" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_084A3BC8_2E78_49f9_8DC1_8FF62F866B36" name="profile.fhir.structure.publish" value="true" modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
 					<tag xmi:id="EAID_66CFC761_5AEE_42bd_BDD4_35791C00BBCE" name="profile.fhir.structure.purpose" value="Represents a clinical statement stating the occurrence of a condition in the QUICK model." modelElement="EAID_CFE57B06_25FC_495d_9C9E_B2E29A620F7D"/>
@@ -18513,6 +18557,17 @@
 				<packageImport xmi:id="mmref01">
 					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
 				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.proposedAtTime" name="profile.fhir.element.Proposal.proposedAtTime">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.proposedAtTime-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.proposedAtTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.proposedAtTime-profile.fhir.element.Proposal.proposedAtTime" name="profile.fhir.element.Proposal.proposedAtTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.proposedAtTime" name="A_Class_profile.fhir.element.Proposal.proposedAtTime" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.proposedAtTime" name="extension_profile.fhir.element.Proposal.proposedAtTime" type="profile.fhir.element.Proposal.proposedAtTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Class"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="Experimental" name="Experimental">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="Experimental-base_Class" name="base_Class" association="Class_Experimental">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -18551,6 +18606,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.structure.publish" name="A_Class_profile.fhir.structure.publish" memberEnd="extension_profile.fhir.structure.publish profile.fhir.structure.publish-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.structure.publish" name="extension_profile.fhir.structure.publish" type="profile.fhir.structure.publish" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.structure.publish profile.fhir.structure.publish-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.relatedStatement" name="profile.fhir.element.Communication.relatedStatement">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.relatedStatement-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.relatedStatement">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.relatedStatement-profile.fhir.element.Communication.relatedStatement" name="profile.fhir.element.Communication.relatedStatement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.relatedStatement" name="A_Property_profile.fhir.element.Communication.relatedStatement" memberEnd="extension_profile.fhir.element.Communication.relatedStatement profile.fhir.element.Communication.relatedStatement-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.relatedStatement" name="extension_profile.fhir.element.Communication.relatedStatement" type="profile.fhir.element.Communication.relatedStatement" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.relatedStatement profile.fhir.element.Communication.relatedStatement-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.skip" name="profile.fhir.element.skip">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.skip-base_Property" name="base_Property" association="Property_profile.fhir.element.skip">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18572,6 +18638,17 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.conditionQualifier" name="A_Property_profile.fhir.element.Condition.conditionQualifier" memberEnd="extension_profile.fhir.element.Condition.conditionQualifier profile.fhir.element.Condition.conditionQualifier-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.conditionQualifier" name="extension_profile.fhir.element.Condition.conditionQualifier" type="profile.fhir.element.Condition.conditionQualifier" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.conditionQualifier profile.fhir.element.Condition.conditionQualifier-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime" name="profile.fhir.element.Proposal.expectedPerformanceTime">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.expectedPerformanceTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime-profile.fhir.element.Proposal.expectedPerformanceTime" name="profile.fhir.element.Proposal.expectedPerformanceTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.expectedPerformanceTime" name="A_Class_profile.fhir.element.Proposal.expectedPerformanceTime" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.expectedPerformanceTime" name="extension_profile.fhir.element.Proposal.expectedPerformanceTime" type="profile.fhir.element.Proposal.expectedPerformanceTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Class"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="XSDUnion" name="XSDUnion">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="XSDUnion-base_Class" name="base_Class" association="Class_XSDUnion">
@@ -18674,6 +18751,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.location.equivalent" name="A_Property_profile.fhir.element.Condition.location.equivalent" memberEnd="extension_profile.fhir.element.Condition.location.equivalent profile.fhir.element.Condition.location.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.location.equivalent" name="extension_profile.fhir.element.Condition.location.equivalent" type="profile.fhir.element.Condition.location.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.location.equivalent profile.fhir.element.Condition.location.equivalent-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.message" name="profile.fhir.element.Communication.message">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.message-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.message">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.message-profile.fhir.element.Communication.message" name="profile.fhir.element.Communication.message">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.message" name="A_Property_profile.fhir.element.Communication.message" memberEnd="extension_profile.fhir.element.Communication.message profile.fhir.element.Communication.message-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.message" name="extension_profile.fhir.element.Communication.message" type="profile.fhir.element.Communication.message" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.message profile.fhir.element.Communication.message-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="anonymousRole" name="anonymousRole">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="anonymousRole-base_Property" name="base_Property" association="Property_anonymousRole">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18729,6 +18817,28 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.status.equivalent" name="A_Property_profile.fhir.element.Condition.status.equivalent" memberEnd="extension_profile.fhir.element.Condition.status.equivalent profile.fhir.element.Condition.status.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.status.equivalent" name="extension_profile.fhir.element.Condition.status.equivalent" type="profile.fhir.element.Condition.status.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.status.equivalent profile.fhir.element.Condition.status.equivalent-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.sender" name="profile.fhir.element.Communication.sender">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.sender-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.sender">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.sender-profile.fhir.element.Communication.sender" name="profile.fhir.element.Communication.sender">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.sender" name="A_Property_profile.fhir.element.Communication.sender" memberEnd="extension_profile.fhir.element.Communication.sender profile.fhir.element.Communication.sender-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.sender" name="extension_profile.fhir.element.Communication.sender" type="profile.fhir.element.Communication.sender" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.sender profile.fhir.element.Communication.sender-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.encounter" name="profile.fhir.element.ClinicalStatement.encounter">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.encounter-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.encounter">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.encounter-profile.fhir.element.ClinicalStatement.encounter" name="profile.fhir.element.ClinicalStatement.encounter">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.ClinicalStatement.encounter" name="A_Class_profile.fhir.element.ClinicalStatement.encounter" memberEnd="extension_profile.fhir.element.ClinicalStatement.encounter profile.fhir.element.ClinicalStatement.encounter-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.ClinicalStatement.encounter" name="extension_profile.fhir.element.ClinicalStatement.encounter" type="profile.fhir.element.ClinicalStatement.encounter" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.ClinicalStatement.encounter profile.fhir.element.ClinicalStatement.encounter-base_Class"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.location[BodySite].laterality" name="profile.fhir.element.Condition.location[BodySite].laterality">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.location[BodySite].laterality-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.location[BodySite].laterality">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18770,6 +18880,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_internal" name="A_Class_internal" memberEnd="extension_internal internal-base_Class">
 					<ownedEnd xmi:id="extension_internal" name="extension_internal" type="internal" isComposite="true" lower="0" upper="1" memberEnd="extension_internal internal-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.urgency" name="profile.fhir.element.Proposal.urgency">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.urgency-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.urgency">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.urgency-profile.fhir.element.Proposal.urgency" name="profile.fhir.element.Proposal.urgency">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.urgency" name="A_Class_profile.fhir.element.Proposal.urgency" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.urgency" name="extension_profile.fhir.element.Proposal.urgency" type="profile.fhir.element.Proposal.urgency" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Class"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.code.equivalent" name="profile.fhir.element.Condition.code.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.code.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.code.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18780,6 +18901,17 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.code.equivalent" name="A_Property_profile.fhir.element.Condition.code.equivalent" memberEnd="extension_profile.fhir.element.Condition.code.equivalent profile.fhir.element.Condition.code.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.code.equivalent" name="extension_profile.fhir.element.Condition.code.equivalent" type="profile.fhir.element.Condition.code.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.code.equivalent profile.fhir.element.Condition.code.equivalent-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.subject" name="profile.fhir.element.ClinicalStatement.subject">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.subject-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.subject">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.subject-profile.fhir.element.ClinicalStatement.subject" name="profile.fhir.element.ClinicalStatement.subject">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.ClinicalStatement.subject" name="A_Class_profile.fhir.element.ClinicalStatement.subject" memberEnd="extension_profile.fhir.element.ClinicalStatement.subject profile.fhir.element.ClinicalStatement.subject-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.ClinicalStatement.subject" name="extension_profile.fhir.element.ClinicalStatement.subject" type="profile.fhir.element.ClinicalStatement.subject" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.ClinicalStatement.subject profile.fhir.element.ClinicalStatement.subject-base_Class"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="is-a" name="is-a">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="is-a-base_Generalization" name="base_Generalization" association="Generalization_is-a">
@@ -18810,6 +18942,17 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.category.equivalent" name="A_Property_profile.fhir.element.Condition.category.equivalent" memberEnd="extension_profile.fhir.element.Condition.category.equivalent profile.fhir.element.Condition.category.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.category.equivalent" name="extension_profile.fhir.element.Condition.category.equivalent" type="profile.fhir.element.Condition.category.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.category.equivalent profile.fhir.element.Condition.category.equivalent-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.originationMode" name="profile.fhir.element.Proposal.originationMode">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.originationMode-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.originationMode">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.originationMode-profile.fhir.element.Proposal.originationMode" name="profile.fhir.element.Proposal.originationMode">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.originationMode" name="A_Class_profile.fhir.element.Proposal.originationMode" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.originationMode" name="extension_profile.fhir.element.Proposal.originationMode" type="profile.fhir.element.Proposal.originationMode" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Class"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.profileId" name="profile.fhir.element.ClinicalStatement.profileId">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.profileId-base_Property" name="base_Property" association="Property_profile.fhir.element.ClinicalStatement.profileId">
@@ -18877,6 +19020,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.ClinicalStatement.statementDateTime" name="A_Class_profile.fhir.element.ClinicalStatement.statementDateTime" memberEnd="extension_profile.fhir.element.ClinicalStatement.statementDateTime profile.fhir.element.ClinicalStatement.statementDateTime-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.element.ClinicalStatement.statementDateTime" name="extension_profile.fhir.element.ClinicalStatement.statementDateTime" type="profile.fhir.element.ClinicalStatement.statementDateTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.ClinicalStatement.statementDateTime profile.fhir.element.ClinicalStatement.statementDateTime-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.medium" name="profile.fhir.element.Communication.medium">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.medium-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.medium">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.medium-profile.fhir.element.Communication.medium" name="profile.fhir.element.Communication.medium">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.medium" name="A_Property_profile.fhir.element.Communication.medium" memberEnd="extension_profile.fhir.element.Communication.medium profile.fhir.element.Communication.medium-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.medium" name="extension_profile.fhir.element.Communication.medium" type="profile.fhir.element.Communication.medium" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.medium profile.fhir.element.Communication.medium-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="XSDSchema" name="XSDSchema">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="XSDSchema-base_Package" name="base_Package" association="Package_XSDSchema">
 						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
@@ -18906,6 +19060,28 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_derivation" name="A_Class_derivation" memberEnd="extension_derivation derivation-base_Class">
 					<ownedEnd xmi:id="extension_derivation" name="extension_derivation" type="derivation" isComposite="true" lower="0" upper="1" memberEnd="extension_derivation derivation-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.prnReason" name="profile.fhir.element.Proposal.prnReason">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.prnReason">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason-profile.fhir.element.Proposal.prnReason" name="profile.fhir.element.Proposal.prnReason">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.prnReason" name="A_Class_profile.fhir.element.Proposal.prnReason" memberEnd="extension_profile.fhir.element.Proposal.prnReason profile.fhir.element.Proposal.prnReason-base_Class">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.prnReason" name="extension_profile.fhir.element.Proposal.prnReason" type="profile.fhir.element.Proposal.prnReason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.prnReason profile.fhir.element.Proposal.prnReason-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.recipient" name="profile.fhir.element.Communication.recipient">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.recipient-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.recipient">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.recipient-profile.fhir.element.Communication.recipient" name="profile.fhir.element.Communication.recipient">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.recipient" name="A_Property_profile.fhir.element.Communication.recipient" memberEnd="extension_profile.fhir.element.Communication.recipient profile.fhir.element.Communication.recipient-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.recipient" name="extension_profile.fhir.element.Communication.recipient" type="profile.fhir.element.Communication.recipient" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.recipient profile.fhir.element.Communication.recipient-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.identifier.equivalent" name="profile.fhir.element.ClinicalStatement.identifier.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.identifier.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.ClinicalStatement.identifier.equivalent">
@@ -19580,20 +19756,20 @@
 			<diagram xmi:id="EAID_C7B5E6E5_28E9_4261_8561_9E472E51D3F4">
 				<model package="EAPK_9920A293_4250_4281_9829_981965BBBD53" localID="5" owner="EAPK_9920A293_4250_4281_9829_981965BBBD53"/>
 				<properties name="Action" type="Logical"/>
-				<project author="MKRAMER" version="1.0" created="2013-10-22 13:20:32" modified="2014-07-25 14:40:40"/>
+				<project author="MKRAMER" version="1.0" created="2013-10-22 13:20:32" modified="2014-10-15 14:14:45"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=84;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=67BA1126;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=19DFF97B;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<extendedProperties/>
 				<elements>
 					<element geometry="Left=676;Top=77;Right=908;Bottom=187;" subject="EAID_9C93F04B_6B64_4e4d_9909_F9EAB74DB2FC" seqno="1" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=A4CCE4C0;"/>
-					<element geometry="Left=984;Top=192;Right=1171;Bottom=239;" subject="EAID_2DDF33D0_21AB_4963_ADA7_C271C5591740" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=C63D9B7E;"/>
+					<element geometry="Left=972;Top=125;Right=1159;Bottom=172;" subject="EAID_2DDF33D0_21AB_4963_ADA7_C271C5591740" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=C63D9B7E;"/>
 					<element geometry="Left=873;Top=258;Right=1099;Bottom=359;" subject="EAID_219D7DC8_F62E_4e8f_84EC_07527DFA38F9" seqno="3" style="DUID=52521B43;NSL=0;"/>
 					<element geometry="Left=624;Top=257;Right=862;Bottom=371;" subject="EAID_25350BD8_872F_45b4_BC53_E5629B289D5C" seqno="4" style="NSL=0;DUID=45BC396E;"/>
 					<element geometry="Left=377;Top=248;Right=603;Bottom=375;" subject="EAID_700E0ECD_80F6_4750_A161_803452A414D1" seqno="5" style="NSL=0;DUID=C1798711;"/>
 					<element geometry="Left=229;Top=406;Right=460;Bottom=507;" subject="EAID_3CE9C7BA_A6E5_40d5_B30F_694AFE3E8FE9" seqno="6" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=4E3BDE40;"/>
-					<element geometry="Left=290;Top=130;Right=527;Bottom=231;" subject="EAID_844E6F06_5E2A_4ec7_9E12_CD75A1A69E09" seqno="7" style="NSL=0;DUID=B13BFC6B;"/>
+					<element geometry="Left=375;Top=127;Right=612;Bottom=228;" subject="EAID_844E6F06_5E2A_4ec7_9E12_CD75A1A69E09" seqno="7" style="NSL=0;DUID=B13BFC6B;"/>
 					<element geometry="Left=764;Top=422;Right=854;Bottom=492;" subject="EAID_701CB845_6F20_49c1_BB23_18F81A8ADC54" seqno="8" style="DUID=D8409B3E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=976;Top=674;Right=1172;Bottom=762;" subject="EAID_F5BCE8C1_7A0D_42d2_ABD9_F088CA0EDE91" seqno="9" style="DUID=FFD8E30C;"/>
 					<element geometry="Left=427;Top=660;Right=633;Bottom=736;" subject="EAID_02085025_9D38_48e4_ADDB_91351E08FB45" seqno="10" style="DUID=BC07B544;NSL=0;"/>
@@ -19608,7 +19784,7 @@
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BA4A5D62_C3A1_4885_874E_EFC70D456312" style="Mode=3;EOID=D8409B3E;SOID=FFD8E30C;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_C2E2F5FD_724F_4a04_AB60_4799DB3266DB" style="Mode=3;EOID=D8409B3E;SOID=4ABDFA75;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D98C616C_68A7_4f8b_9FC9_12ABD76980FD" style="Mode=3;EOID=D8409B3E;SOID=972E36BF;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=-44;SY=23;EX=-36;EY=-17;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_81C22203_1EFC_40e4_ADEF_48E0E0BAD2AA" style="Mode=3;EOID=A4CCE4C0;SOID=C63D9B7E;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-92;SY=-5;EX=-36;EY=-18;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_81C22203_1EFC_40e4_ADEF_48E0E0BAD2AA" style="Mode=3;EOID=A4CCE4C0;SOID=C63D9B7E;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8914942B_36F6_44ad_BB67_B7C833EEE6FB" style="Mode=3;EOID=D8409B3E;SOID=53E3743A;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-1;SY=-1;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DA259F62_F773_4523_83EF_4DC8C54EEDC6" style="Mode=3;EOID=A4CCE4C0;SOID=45BC396E;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=44;SY=6;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_1650D7A4_1551_475f_B363_7B3F194267BD" style="Mode=3;EOID=A4CCE4C0;SOID=C1798711;Color=-1;LWidth=0;Hidden=0;"/>
@@ -19871,28 +20047,28 @@
 			<diagram xmi:id="EAID_DAD78DC0_8995_403c_807C_AD3A139268C1">
 				<model package="EAPK_E7E54777_F262_4fe3_AA8E_6E7DDA4E1CB6" localID="6" owner="EAPK_E7E54777_F262_4fe3_AA8E_6E7DDA4E1CB6"/>
 				<properties name="Core" type="Logical"/>
-				<project author="Aziz" version="1.0" created="2013-10-22 13:29:48" modified="2014-09-05 12:21:47"/>
+				<project author="Aziz" version="1.0" created="2013-10-22 13:29:48" modified="2014-10-13 21:00:51"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=84;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=1E9332D1;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=5607E6BC;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<extendedProperties/>
 				<elements>
-					<element geometry="Left=9;Top=541;Right=180;Bottom=611;" subject="EAID_A162F3E4_4BCE_450d_898E_AF5305107CA6" seqno="1" style="DUID=43C7DE8E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=202;Top=524;Right=432;Bottom=638;" subject="EAID_9C93F04B_6B64_4e4d_9909_F9EAB74DB2FC" seqno="2" style="DUID=94E192F1;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=23;Top=540;Right=194;Bottom=610;" subject="EAID_A162F3E4_4BCE_450d_898E_AF5305107CA6" seqno="1" style="DUID=43C7DE8E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=215;Top=540;Right=445;Bottom=654;" subject="EAID_9C93F04B_6B64_4e4d_9909_F9EAB74DB2FC" seqno="2" style="DUID=94E192F1;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=179;Top=406;Right=278;Bottom=476;" subject="EAID_EC4E6960_12D9_4fda_9A6A_22A311475816" seqno="3" style="DUID=66069964;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=579;Top=535;Right=669;Bottom=605;" subject="EAID_701CB845_6F20_49c1_BB23_18F81A8ADC54" seqno="4" style="DUID=0FFB46F2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=334;Top=307;Right=506;Bottom=377;" subject="EAID_E7380E75_8441_4397_BB27_8B18E593A83A" seqno="5" style="DUID=6A006354;"/>
-					<element geometry="Left=149;Top=307;Right=316;Bottom=377;" subject="EAID_0310A7EB_AAAB_49d9_84B6_1613EDA983BD" seqno="6" style="DUID=3CE11181;"/>
-					<element geometry="Left=8;Top=307;Right=134;Bottom=377;" subject="EAID_50CC61A8_B474_4a82_8002_3EBEE84F4183" seqno="7" style="DUID=E84B9BE7;"/>
-					<element geometry="Left=465;Top=543;Right=555;Bottom=612;" subject="EAID_084990D4_0C33_4707_9920_4D28AEDBCCF6" seqno="8" style="DUID=663711A4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=537;Top=414;Right=627;Bottom=484;" subject="EAID_E14F597B_AF54_4b68_9AC9_7931FB146B9C" seqno="9" style="DUID=D01A9BCE;"/>
+					<element geometry="Left=631;Top=544;Right=721;Bottom=614;" subject="EAID_701CB845_6F20_49c1_BB23_18F81A8ADC54" seqno="4" style="DUID=0FFB46F2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=377;Top=307;Right=549;Bottom=377;" subject="EAID_E7380E75_8441_4397_BB27_8B18E593A83A" seqno="5" style="DUID=6A006354;"/>
+					<element geometry="Left=197;Top=307;Right=364;Bottom=377;" subject="EAID_0310A7EB_AAAB_49d9_84B6_1613EDA983BD" seqno="6" style="DUID=3CE11181;"/>
+					<element geometry="Left=41;Top=305;Right=167;Bottom=375;" subject="EAID_50CC61A8_B474_4a82_8002_3EBEE84F4183" seqno="7" style="DUID=E84B9BE7;"/>
+					<element geometry="Left=470;Top=542;Right=560;Bottom=611;" subject="EAID_084990D4_0C33_4707_9920_4D28AEDBCCF6" seqno="8" style="DUID=663711A4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=550;Top=415;Right=640;Bottom=485;" subject="EAID_E14F597B_AF54_4b68_9AC9_7931FB146B9C" seqno="9" style="DUID=D01A9BCE;"/>
 					<element geometry="Left=143;Top=93;Right=414;Bottom=259;" subject="EAID_004C8F28_694D_4894_A5FF_80071B891E81" seqno="10" style="DUID=36A413D8;NSL=0;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;BCol=14938876;"/>
 					<element geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E7B94494_D959_4df5_88E1_C1A467EA1423" style="Mode=3;EOID=66069964;SOID=94E192F1;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_37AB8D4C_3EB3_4a02_B924_5ED6E865A81E" style="Mode=3;EOID=66069964;SOID=43C7DE8E;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FAAC9ACC_7098_411d_8B0E_DFB565E61B22" style="Mode=3;EOID=36A413D8;SOID=6A006354;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_34D7A304_0952_4658_B29C_7334B1412C77" style="Mode=3;EOID=36A413D8;SOID=3CE11181;Color=-1;LWidth=0;Hidden=0;"/>
-					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E4E4B147_26FD_4017_BCFC_5B4E5B02D81C" style="Mode=3;EOID=36A413D8;SOID=E84B9BE7;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=26;SY=34;EX=-64;EY=-82;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E4E4B147_26FD_4017_BCFC_5B4E5B02D81C" style="Mode=3;EOID=36A413D8;SOID=E84B9BE7;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=-5;SY=-27;EX=-5;EY=-28;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6A4F6529_60E5_45b8_8E12_BEEB6B05435A" style="Mode=3;EOID=D01A9BCE;SOID=663711A4;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5BCA9BD5_357C_4bea_B302_4F1A48BC5A34" style="Mode=3;EOID=D01A9BCE;SOID=0FFB46F2;Color=-1;LWidth=0;Hidden=0;"/>
 				</elements>
@@ -20304,9 +20480,9 @@
 			<diagram xmi:id="EAID_E49B7623_A2AE_466f_A515_1883ABB56D89">
 				<model package="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5" localID="137" owner="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5"/>
 				<properties name="CommunicationOccurrence" type="Logical"/>
-				<project author="Claude Nanjo" version="1.0" created="2014-07-08 17:11:22" modified="2014-07-30 17:36:05"/>
+				<project author="Claude Nanjo" version="1.0" created="2014-07-08 17:11:22" modified="2014-10-22 15:36:11"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=29E49831;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=A4148714;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<extendedProperties/>
@@ -20314,7 +20490,7 @@
 					<element geometry="Left=305;Top=470;Right=510;Bottom=540;" subject="EAID_EFCF44DA_9EFB_420c_AE9A_DB32134E8AEE" seqno="1" style="DUID=02DDC11B;BCol=13434828;"/>
 					<element geometry="Left=294;Top=547;Right=516;Bottom=684;" subject="EAID_700E0ECD_80F6_4750_A161_803452A414D1" seqno="2" style="DUID=0691146C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=288;Top=303;Right=526;Bottom=427;" subject="EAID_25350BD8_872F_45b4_BC53_E5629B289D5C" seqno="3" style="DUID=E666390F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
-					<element geometry="Left=304;Top=236;Right=491;Bottom=286;" subject="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" seqno="4" style="DUID=C424873A;BCol=13434828;"/>
+					<element geometry="Left=304;Top=247;Right=491;Bottom=297;" subject="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" seqno="4" style="DUID=C424873A;BCol=13434828;"/>
 					<element geometry="Left=27;Top=239;Right=153;Bottom=309;" subject="EAID_50CC61A8_B474_4a82_8002_3EBEE84F4183" seqno="5" style="DUID=E1474855;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=289;Top=76;Right=515;Bottom=187;" subject="EAID_219D7DC8_F62E_4e8f_84EC_07527DFA38F9" seqno="6" style="DUID=AA5903FE;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
 					<element geometry="Left=613;Top=219;Right=841;Bottom=330;" subject="EAID_81A2ECEA_E56C_483d_9988_D81AA7EF2FDA" seqno="7" style="DUID=AB066E19;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
