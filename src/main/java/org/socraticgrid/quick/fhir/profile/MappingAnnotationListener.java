@@ -31,9 +31,9 @@ import org.socraticgrid.uml.UmlProperty;
 
 public class MappingAnnotationListener extends FhirTagBaseListener {
 	
-	private FhirTagParser parser;
-	private OneToOnePropertyMapping mapping;
-	private Map<String, UmlClass> propertySourceMap;
+	private final FhirTagParser parser;
+	private final OneToOnePropertyMapping mapping;
+	private final Map<String, UmlClass> propertySourceMap;
 	private String targetResource;
 
 	public MappingAnnotationListener(FhirTagParser parser, UmlProperty sourceProperty) {
@@ -110,7 +110,7 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 		TokenStream tokens = parser.getTokenStream();
         Boolean extension = false;
         if ( ctx.BOOLEAN()!=null && mapping.getDestination() != null) {
-        	extension = new Boolean(ctx.BOOLEAN().getText());
+            extension = Boolean.valueOf(ctx.BOOLEAN().getText());
             mapping.setExtension(extension);
         }
 	}
