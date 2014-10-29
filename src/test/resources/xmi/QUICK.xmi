@@ -2790,6 +2790,35 @@
 		<thecustomprofile:profile.fhir.element.Communication.recipient base_Property="EAID_BF3214B5_A4B1_4dda_AD72_8786EF4E28E5" profile.fhir.element.Communication.recipient="DestinationConcept.recipient(type=Patient,type=Practioner,type=Device,type=RelatedPerson,extension=true)"/>
 		<thecustomprofile:profile.fhir.element.Communication.relatedStatement base_Property="EAID_EB2DC572_44AC_4e39_92EF_E4598D593720" profile.fhir.element.Communication.relatedStatement="DestinationConcept.relatedStatement(type=Resource,extension=true)"/>
 		<thecustomprofile:profile.fhir.element.Communication.sender base_Property="EAID_4686E6A3_C3A2_46bd_B460_0A410837917D" profile.fhir.element.Communication.sender="DestinationConcept.sender(type=Patient,type=Practitioner,type=Device,type=RelatedPerson,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.procedureCode base_Property="EAID_85B3069A_2156_443a_AB9A_4351662BCDC5" profile.fhir.element.Procedure.procedureCode="DestinationConcept.typo(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.approachBodySite base_Property="EAID_21DBAC9A_FDA1_41ff_9393_7F90607F369A" profile.fhir.element.Procedure.approachBodySite="DestinationConcept.approachBodySite(type=Location,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.approachBodySite.laterality base_Property="EAID_21DBAC9A_FDA1_41ff_9393_7F90607F369A" profile.fhir.element.Procedure.approachBodySite.laterality="DestinationConcept.approachBodySite.laterality(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.approachBodySite.anatomicalLocation base_Property="EAID_21DBAC9A_FDA1_41ff_9393_7F90607F369A" profile.fhir.element.Procedure.approachBodySite.anatomicalLocation="DestinationConcept.approachBodySite.anatomicalLocation(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.approachBodySite.code base_Property="EAID_21DBAC9A_FDA1_41ff_9393_7F90607F369A" profile.fhir.element.Procedure.approachBodySite.code="DestinationConcept.approachBodySite.code(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.targetBodySite.anatomicalLocation base_Property="EAID_C6634A7D_3F6C_4b7e_AE4A_9D83D5E61C5B" profile.fhir.element.Procedure.targetBodySite.anatomicalLocation="DestinationConcept.targetBodySite.anatomicalLocation(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.targetBodySite base_Property="EAID_C6634A7D_3F6C_4b7e_AE4A_9D83D5E61C5B" profile.fhir.element.Procedure.targetBodySite="DestinationConcept.targetBodySite(type=Location,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.targetBodySite.directionality base_Property="EAID_C6634A7D_3F6C_4b7e_AE4A_9D83D5E61C5B" profile.fhir.element.Procedure.targetBodySite.directionality="DestinationConcept.targetBodySite.directionality(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.targetBodySite.laterality base_Property="EAID_C6634A7D_3F6C_4b7e_AE4A_9D83D5E61C5B" profile.fhir.element.Procedure.targetBodySite.laterality="DestinationConcept.targetBodySite.laterality(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.procedureMethod base_Property="EAID_7D07BA67_9616_4ebe_B1F6_E6D0423A884C" profile.fhir.element.Procedure.procedureMethod="DestinationConcept.procedureMethod(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Procedure.procedureSchedule base_Property="EAID_BD15ECF1_4F20_4bf1_934E_4E9248133A4F" profile.fhir.element.Procedure.procedureSchedule="DestinationConcept.procedureSchedule(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.currentStatus.reason base_Property="EAID_DCB78B3C_741D_4c70_AFD6_F6FDCDC1F9B7" profile.fhir.element.Action.currentStatus.reason="DestinationConcept.currentStatus.reason(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.currentStatus.statusUpdateTime base_Property="EAID_DCB78B3C_741D_4c70_AFD6_F6FDCDC1F9B7" profile.fhir.element.Action.currentStatus.statusUpdateTime="DestinationConcept.currentStatus.statusUpdateType(type=dateTime,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.currentStatus.status base_Property="EAID_DCB78B3C_741D_4c70_AFD6_F6FDCDC1F9B7" profile.fhir.element.Action.currentStatus.status="DestinationConcept.currentStatus.status(type=CodeableConcept, extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.currentStatus base_Property="EAID_DCB78B3C_741D_4c70_AFD6_F6FDCDC1F9B7" profile.fhir.element.Action.currentStatus="DestinationConcept.currentStatus(type=ActionStatus,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.skip base_Property="EAID_039D72D1_D761_456f_B270_B21E8A88173A" profile.fhir.element.skip="true"/>
+		<thecustomprofile:profile.fhir.element.Action.indication.reason base_Property="EAID_039D72D1_D761_456f_B270_B21E8A88173A" profile.fhir.element.Action.indication.reason="DestinationConcept.indication(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.patientPreference base_Property="EAID_BDDF2279_DFE4_45bf_82E3_4EBA8726FA29" profile.fhir.element.Action.patientPreference="DestinationConcept.patientPreference(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.providerPreference base_Property="EAID_977FDAAF_684F_43d8_A500_4D17F0A4B405" profile.fhir.element.Action.providerPreference="DestinationConcept.providerPreference(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.statusHistory.status base_Property="EAID_E49EE709_13A6_4b21_9402_4295FD21E3BE" profile.fhir.element.Action.statusHistory.status="DestinationConcept.statusHistory.status(type=CodeableConcept, extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.statusHistory base_Property="EAID_E49EE709_13A6_4b21_9402_4295FD21E3BE" profile.fhir.element.Action.statusHistory="DestinationConcept.statusHistory(type=ActionStatus,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.statusHistory.statusUpdateTime base_Property="EAID_E49EE709_13A6_4b21_9402_4295FD21E3BE" profile.fhir.element.Action.statusHistory.statusUpdateTime="DestinationConcept.statusHistory.statusUpdateTime(type=dateTime,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Action.statusHistory.reason base_Property="EAID_E49EE709_13A6_4b21_9402_4295FD21E3BE" profile.fhir.element.Action.statusHistory.reason="DestinationConcept.statusHistory.reason(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.expectedPerformanceTime base_Property="EAID_FA00E457_8F54_4d85_8DD7_1A33AD790C4E" profile.fhir.element.Proposal.expectedPerformanceTime="DestinationConcept.expectedPerformanceTime(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.proposedAtTime base_Property="EAID_38FD8A64_51AE_48b0_BF50_5837E7615284" profile.fhir.element.Proposal.proposedAtTime="DestinationConcept.proposedAtTime(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.prnReason.reason base_Property="EAID_9FAEDC5B_BBC2_4565_92A3_D17D5B17C587" profile.fhir.element.Proposal.prnReason.reason="DestinationConcept.prnReason(type=CodeableConcept,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.skip base_Property="EAID_9FAEDC5B_BBC2_4565_92A3_D17D5B17C587" profile.fhir.element.skip="true"/>
+		<thecustomprofile:profile.fhir.element.Proposal.urgency base_Property="EAID_A01A81AB_A00E_4906_81D7_608B21FA6EC8" profile.fhir.element.Proposal.urgency="DestinationConcept.urgency(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.Proposal.originationMode base_Property="EAID_36DAF13F_79C6_41d0_8B91_14FCAF8C3341" profile.fhir.element.Proposal.originationMode="DestinationConcept.originationMode(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.identifier.equivalent base_Property="EAID_0F7F2CFF_B01A_4b83_AD52_30224536928E" profile.fhir.element.ClinicalStatement.identifier.equivalent="true"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.profileId base_Property="EAID_7B6A9509_3949_4476_97AC_CC6AB60F6917" profile.fhir.element.ClinicalStatement.profileId="DestinationConcept.profileId(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.skip base_Property="EAID_7E7802BE_E36E_48f1_B349_193DA57207C1" profile.fhir.element.skip="true"/>
@@ -2882,19 +2911,14 @@
 		<thecustomprofile:Mixin base_Generalization="EAID_2D2D6DFF_3155_425b_A67A_340549D7DD26"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_8963A820_5E9E_4bc4_BFB1_28677D1F0860"/>
 		<thecustomprofile:profile.fhir.structure.type base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.type="Other"/>
-		<thecustomprofile:profile.fhir.element.Proposal.prnReason base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.prnReason="Other.prnReason(extension=true)"/>
-		<thecustomprofile:profile.fhir.element.Proposal.expectedPerformanceTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.expectedPerformanceTime="Other.expectedPerformanceTime(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementDateTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.statementDateTime="Other.created(type=date,extension=false)"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.subject base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.subject="Other.subject(cardinality=1..1,type=Any, extension=false)"/>
 		<thecustomprofile:profile.fhir.structure.purpose base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.purpose="Represents a clinical statement stating that a communication proposal has been made."/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementAuthor base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.statementAuthor="Other.author(type=Practitioner,type=Patient,type=RelatedPerson,extension=false)"/>
-		<thecustomprofile:profile.fhir.element.Proposal.urgency base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.urgency="Other.urgency(extension=true)"/>
 		<thecustomprofile:profile.fhir.element.ClinicalStatement.encounter base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.encounter="Other.encounter(extension=true)"/>
 		<thecustomprofile:profile.fhir.structure.name base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.name="CommunicationProposalOccurrence"/>
 		<thecustomprofile:profile.fhir.structure.publish base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.structure.publish="true"/>
-		<thecustomprofile:profile.fhir.element.Proposal.originationMode base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.originationMode="Other.originationMode(extension=true)"/>
-		<thecustomprofile:profile.fhir.element.Proposal.proposedAtTime base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.Proposal.proposedAtTime="Other.proposedAtTime(extension=true)"/>
-		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.additionalText="Other.text(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" profile.fhir.element.ClinicalStatement.additionalText="Other.notes(extension=true)"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_93DBDAB9_AA93_41a2_B39D_2F49BFA0F2EE"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_D4A823B1_D887_4245_AC19_C8AC0FB18870"/>
 		<thecustomprofile:is-a base_Generalization="EAID_EB198633_3972_4f26_A3C1_75429F8E003A"/>
@@ -2957,6 +2981,16 @@
 		<thecustomprofile:is-a base_Generalization="EAID_79916C82_C472_439c_8691_263742A945F7"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_E122E3F6_FEB7_4490_A65F_239DE3CD9E82"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_F4888E87_B000_4ce7_9305_8CE143909272"/>
+		<thecustomprofile:profile.fhir.structure.type base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.structure.type="Other"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementDateTime base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.statementDateTime="Other.statementDateTime(extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.subject base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.subject="Other.subject(cardinality=1..1,type=Patient, extension=true)"/>
+		<thecustomprofile:profile.fhir.structure.purpose base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.structure.purpose="Represents a request for the performance of a procedure"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementAuthor base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.statementAuthor="Other.statementAuthor(type=Practitioner,type=Patient,type=RelatedPerson,type=Device,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.encounter base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.encounter="Other.encounter(type=Encounter,extension=true)"/>
+		<thecustomprofile:profile.fhir.structure.name base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.structure.name="ProcedureProposalOccurrence"/>
+		<thecustomprofile:profile.fhir.structure.publish base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.structure.publish="true"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.statementSource base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.statementSource="Other.source(type=Patient,type=RelatedPerson,type=Practitioner,type=Device,extension=true)"/>
+		<thecustomprofile:profile.fhir.element.ClinicalStatement.additionalText base_Class="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" profile.fhir.element.ClinicalStatement.additionalText="Other.notes(extension=true)"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_908EB08B_2A1E_44f6_ACA8_5F84CDF57549"/>
 		<thecustomprofile:Mixin base_Generalization="EAID_EAD6C6E9_C1D1_4122_B2F1_439CAACE6412"/>
 		<thecustomprofile:is-a base_Generalization="EAID_F853D57A_89E6_4f69_9459_4EEF5BB24326"/>
@@ -4043,7 +4077,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_680E6E18_4D78_4901_80AD_F62F77FF8044" name="profile.fhir.element.Procedure.procedureCode" value="DestinationConcept.typo(type=CodeableConcept,extension=true)"/>
+						</tags>
 						<xrefs/>
 					</attribute>
 					<attribute xmi:idref="EAID_21DBAC9A_FDA1_41ff_9393_7F90607F369A" name="approachBodySite" scope="Public">
@@ -4058,7 +4094,12 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_06F3BE20_5AE3_4e89_A29D_106A62C6BE62" name="profile.fhir.element.Procedure.approachBodySite.laterality" value="DestinationConcept.approachBodySite.laterality(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_BB050A1B_FE70_41a8_986F_D3F5B15464D8" name="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" value="DestinationConcept.approachBodySite.anatomicalLocation(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_9FD7C369_807A_456d_81F5_1D7D235669C6" name="profile.fhir.element.Procedure.approachBodySite.code" value="DestinationConcept.approachBodySite.code(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_10C89724_0AC1_432e_A7FF_AD69DABCAA36" name="profile.fhir.element.Procedure.approachBodySite" value="DestinationConcept.approachBodySite(type=Location,extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={823AC757-050D-4c62-9553-449709118088}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={21DBAC9A-FDA1-41ff-9393-7F90607F369A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_C6634A7D_3F6C_4b7e_AE4A_9D83D5E61C5B" name="targetBodySite" scope="Public">
@@ -4073,7 +4114,12 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_6427D8B7_FB18_4ad9_BA64_1715BA43612D" name="profile.fhir.element.Procedure.targetBodySite" value="DestinationConcept.targetBodySite(type=Location,extension=true)"/>
+							<tag xmi:id="EAID_03F73025_E7FF_408c_9AD9_10E46054ACD6" name="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" value="DestinationConcept.targetBodySite.anatomicalLocation(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_9ACBB7CB_D894_47c7_849C_376D5F82A539" name="profile.fhir.element.Procedure.targetBodySite.laterality" value="DestinationConcept.targetBodySite.laterality(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_35A0582F_7D17_4be2_A120_6EABB2DE1734" name="profile.fhir.element.Procedure.targetBodySite.directionality" value="DestinationConcept.targetBodySite.directionality(type=CodeableConcept,extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={A23CBA9C-B089-462b-94CF-A27748E4FB51}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={C6634A7D-3F6C-4b7e-AE4A-9D83D5E61C5B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_7D07BA67_9616_4ebe_B1F6_E6D0423A884C" name="procedureMethod" scope="Public">
@@ -4088,7 +4134,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_2E747271_5FC6_434b_A213_6DE4EADFF707" name="profile.fhir.element.Procedure.procedureMethod" value="DestinationConcept.procedureMethod(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={4B9CCDBD-C50A-4835-9350-36E0FC409632}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={7D07BA67-9616-4ebe-B1F6-E6D0423A884C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_BD15ECF1_4F20_4bf1_934E_4E9248133A4F" name="procedureSchedule" scope="Public">
@@ -4103,7 +4151,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_9E31F1AE_DF11_42df_B071_4E81648D7156" name="profile.fhir.element.Procedure.procedureSchedule" value="DestinationConcept.procedureSchedule(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={BAEA8565-E7C3-459f-9777-F24D3F68472A}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={BD15ECF1-4F20-4bf1-934E-4E9248133A4F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
@@ -4511,7 +4561,7 @@
 			<element xmi:idref="EAID_EF43D98F_BE54_42a9_AFC9_955E98B92D8A" xmi:type="uml:Class" name="Indication" scope="public">
 				<model package="EAPK_89010FC5_3BEE_4ac8_A3CE_3A851A6FCC26" tpos="0" ea_localid="1282" ea_eleType="element"/>
 				<properties documentation="An asserted clinical reason to perform a test, prescribe a medication, procedure, or perform a procedure, or perform any act.&#xA;&#xA;The reason can be specified as a code or as another statement, e.g., code for diabetes (ICD-9-CM 250.0) or Condition (with diabetes code) documented elsewhere in a patient's record." isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="cnanjo" version="1.0" phase="1.0" created="2014-07-02 10:56:26" modified="2014-07-25 14:32:32" complexity="1" status="Proposed"/>
+				<project author="cnanjo" version="1.0" phase="1.0" created="2014-07-02 10:56:26" modified="2014-10-28 23:27:43" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
@@ -5874,7 +5924,12 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_3F59094D_18FE_482b_87EE_2848219C730F" name="profile.fhir.element.Action.currentStatus" value="DestinationConcept.currentStatus(type=ActionStatus,extension=true)"/>
+							<tag xmi:id="EAID_9B078F1C_8439_428c_875E_5A3CABE006E1" name="profile.fhir.element.Action.currentStatus.status" value="DestinationConcept.currentStatus.status(type=CodeableConcept, extension=true)"/>
+							<tag xmi:id="EAID_15DD820C_B2D2_4d3c_ACCE_4C3E6BCB93A3" name="profile.fhir.element.Action.currentStatus.reason" value="DestinationConcept.currentStatus.reason(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_4C7EA133_BF18_4584_AFE0_C375F075A358" name="profile.fhir.element.Action.currentStatus.statusUpdateTime" value="DestinationConcept.currentStatus.statusUpdateType(type=dateTime,extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={AAD2A6FF-8F85-4f8e-B3A9-BA566A3E648D}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={DCB78B3C-741D-4c70-AFD6-F6FDCDC1F9B7}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_039D72D1_D761_456f_B270_B21E8A88173A" name="indication" scope="Public">
@@ -5889,7 +5944,10 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_1C741E81_2B2F_4eff_BF99_962ACDF10F9E" name="profile.fhir.element.Action.indication.reason" value="DestinationConcept.indication(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_AF29A9CB_7859_454e_891E_8458DDD6B8B5" name="profile.fhir.element.skip" value="true"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={C31D5D91-95E2-4f4c-93A6-958655AF1181}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={039D72D1-D761-456f-B270-B21E8A88173A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_BDDF2279_DFE4_45bf_82E3_4EBA8726FA29" name="patientPreference" scope="Public">
@@ -5904,7 +5962,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_D748EEF6_20CE_423c_B7D8_5245159CADE9" name="profile.fhir.element.Action.patientPreference" value="DestinationConcept.patientPreference(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={D6D9D19F-869D-4d5e-955E-F4C715443E6E}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={BDDF2279-DFE4-45bf-82E3-4EBA8726FA29}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_977FDAAF_684F_43d8_A500_4D17F0A4B405" name="providerPreference" scope="Public">
@@ -5919,7 +5979,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_890DF54C_F5E3_4c5b_B677_70CCD5C68BF5" name="profile.fhir.element.Action.providerPreference" value="DestinationConcept.providerPreference(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={B1C07C93-61AF-4386-8136-B8A3DD135A00}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={977FDAAF-684F-43d8-A500-4D17F0A4B405}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_E49EE709_13A6_4b21_9402_4295FD21E3BE" name="statusHistory" scope="Public">
@@ -5934,7 +5996,12 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_12FFDF98_D9D1_46eb_8A3D_4E6B0302EB1F" name="profile.fhir.element.Action.statusHistory" value="DestinationConcept.statusHistory(type=ActionStatus,extension=true)"/>
+							<tag xmi:id="EAID_6C2E1E4E_F4E0_4939_81B8_E1F57949497A" name="profile.fhir.element.Action.statusHistory.reason" value="DestinationConcept.statusHistory.reason(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_88773C2C_D01E_41c2_9549_5EBA7B2C9480" name="profile.fhir.element.Action.statusHistory.status" value="DestinationConcept.statusHistory.status(type=CodeableConcept, extension=true)"/>
+							<tag xmi:id="EAID_4A245C51_AE8B_4b13_A4B6_5EB2AC06B514" name="profile.fhir.element.Action.statusHistory.statusUpdateTime" value="DestinationConcept.statusHistory.statusUpdateTime(type=dateTime,extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={52DFE29B-A8E2-4795-B139-371941B684FD}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={E49EE709-13A6-4b21-9402-4295FD21E3BE}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
@@ -6356,7 +6423,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_3779C72D_5DE4_4057_8C09_4B09888B729F" name="profile.fhir.element.Proposal.expectedPerformanceTime" value="DestinationConcept.expectedPerformanceTime(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={20BA47CC-46C2-4e68-A19A-D8217C80577A}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={FA00E457-8F54-4d85-8DD7-1A33AD790C4E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_38FD8A64_51AE_48b0_BF50_5837E7615284" name="proposedAtTime" scope="Public">
@@ -6371,7 +6440,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_9064FCAD_86B0_4216_ABBD_D2692E05B383" name="profile.fhir.element.Proposal.proposedAtTime" value="DestinationConcept.proposedAtTime(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={FBC8C3D0-E550-468c-BC38-6FD99CBBF53C}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={38FD8A64-51AE-48b0-BF50-5837E7615284}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_9FAEDC5B_BBC2_4565_92A3_D17D5B17C587" name="prnReason" scope="Public">
@@ -6386,7 +6457,10 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_0021E76B_CFB3_4424_BA3A_3F229BCC94E3" name="profile.fhir.element.Proposal.prnReason.reason" value="DestinationConcept.prnReason(type=CodeableConcept,extension=true)"/>
+							<tag xmi:id="EAID_3EBBC7C6_10AC_49cc_A28E_90F35174AE9C" name="profile.fhir.element.skip" value="true"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={968ED6A9-1A02-409c-B4B6-77ED2F98A37E}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={9FAEDC5B-BBC2-4565-92A3-D17D5B17C587}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_A01A81AB_A00E_4906_81D7_608B21FA6EC8" name="urgency" scope="Public">
@@ -6401,7 +6475,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_D752DCF8_E378_4fff_9411_925B2D29E39F" name="profile.fhir.element.Proposal.urgency" value="DestinationConcept.urgency(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={FED744FE-A853-45ae-9428-D6DB0AF143F7}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={A01A81AB-A00E-4906-81D7-608B21FA6EC8}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 					<attribute xmi:idref="EAID_36DAF13F_79C6_41d0_8B91_14FCAF8C3341" name="originationMode" scope="Public">
@@ -6416,7 +6492,9 @@
 						<options/>
 						<style/>
 						<styleex value="IsLiteral=0;volatile=0;"/>
-						<tags/>
+						<tags>
+							<tag xmi:id="EAID_89DB2505_9D02_486e_B121_54B902361D69" name="profile.fhir.element.Proposal.originationMode" value="DestinationConcept.originationMode(extension=true)"/>
+						</tags>
 						<xrefs value="$XREFPROP=$XID={D5E6EF1E-718F-4ac5-BA62-B2BB6DD04AE4}$XID;$NAM=CustomProperties$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isID@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=0@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={36DAF13F-79C6-41d0-8B91-14FCAF8C3341}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 					</attribute>
 				</attributes>
@@ -12604,21 +12682,16 @@
 			<element xmi:idref="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8" xmi:type="uml:Class" name="CommunicationProposalOccurrence" scope="public">
 				<model package="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5" tpos="0" ea_localid="1377" ea_eleType="element"/>
 				<properties documentation="An occurrence of a proposal to communicate. E.g., the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.&#xA;&#xA;&#xA;&lt;b&gt;Example&lt;/b&gt;&#xA;&lt;u&gt;Expression from source knowledge artifact&lt;/u&gt;&#xA;Notify San Diego County Department of Health and Human Services about case of Pertussis&#xA;&#xA;&lt;u&gt;Expression in CQL+QUICK&lt;/u&gt;&#xA;let PertussisNotificationSD = &#xA;  [Communication, Proposal] N where&#xA;    N.recipient is Organization&#xA;      and&#xA;    (N.recipient as Organization).name = &quot;San Diego County Department of Health and Human Services&quot;&#xA;      and&#xA;    exists (C.relatedStatement P where&#xA;        P is ConditionOccurrence&#xA;        and (P as ConditionOccurrence).code in &quot;Pertussis Diagnosis Value Set&quot;&#xA;    )" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 17:12:33" modified="2014-10-22 15:36:08" complexity="1" status="Proposed"/>
+				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 17:12:33" modified="2014-10-28 21:22:24" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
 				<tags>
-					<tag xmi:id="EAID_0AA42CF9_1C21_4938_99A8_E681CD3244FD" name="profile.fhir.element.ClinicalStatement.additionalText" value="Other.text(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
+					<tag xmi:id="EAID_0AA42CF9_1C21_4938_99A8_E681CD3244FD" name="profile.fhir.element.ClinicalStatement.additionalText" value="Other.notes(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_B9C1E2E7_A3F7_4450_959A_C111F2E842BD" name="profile.fhir.element.ClinicalStatement.encounter" value="Other.encounter(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_D75D7308_6210_4a99_8B95_882E9F82820D" name="profile.fhir.element.ClinicalStatement.statementAuthor" value="Other.author(type=Practitioner,type=Patient,type=RelatedPerson,extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_49EE1D3C_F7F3_481a_9CE3_9B3C054D30D8" name="profile.fhir.element.ClinicalStatement.statementDateTime" value="Other.created(type=date,extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_BA91C182_2369_43c7_AFD7_E5407BEC289C" name="profile.fhir.element.ClinicalStatement.subject" value="Other.subject(cardinality=1..1,type=Any, extension=false)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
-					<tag xmi:id="EAID_E688CBE9_2573_41a9_A1A7_8B82173DB572" name="profile.fhir.element.Proposal.expectedPerformanceTime" value="Other.expectedPerformanceTime(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
-					<tag xmi:id="EAID_7384A326_16D1_4beb_9156_ED1C25787A94" name="profile.fhir.element.Proposal.originationMode" value="Other.originationMode(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
-					<tag xmi:id="EAID_753A8D60_614E_4741_ACFD_9052E0A074DF" name="profile.fhir.element.Proposal.prnReason" value="Other.prnReason(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
-					<tag xmi:id="EAID_3A01AB5E_D7B3_476a_B82A_E8043B550F10" name="profile.fhir.element.Proposal.proposedAtTime" value="Other.proposedAtTime(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
-					<tag xmi:id="EAID_23E1FF19_D658_47ff_A302_DB7F75C6459E" name="profile.fhir.element.Proposal.urgency" value="Other.urgency(extension=true)" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_ADBDEBD5_993A_46f8_B846_2BC3889A3963" name="profile.fhir.structure.name" value="CommunicationProposalOccurrence" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_4BAC8B59_1BE3_420a_B201_4C09B058B3B7" name="profile.fhir.structure.publish" value="true" modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
 					<tag xmi:id="EAID_DA825E8B_6831_40e9_9C12_1FB9F890B734" name="profile.fhir.structure.purpose" value="Represents a clinical statement stating that a communication proposal has been made." modelElement="EAID_789C82A4_5B7A_4266_8B66_33CF1DC7F7E8"/>
@@ -12887,7 +12960,7 @@
 			<element xmi:idref="EAID_66C8CB95_1306_4f9a_93D0_C2E594AEDFB3" xmi:type="uml:Class" name="ProcedurePerformanceOccurrence" scope="public">
 				<model package="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5" tpos="0" ea_localid="1367" ea_eleType="element"/>
 				<properties documentation="The actual event of performing a procedure.&#xA;&#xA;&lt;b&gt;Example&lt;/b&gt;&#xA;&lt;u&gt;Expression from source knowledge artifact&lt;/u&gt;&#xA;Screen for syphilis infections&#xA;&#xA;&lt;u&gt;Expression in CQL+QUICK&lt;/u&gt;&#xA;let PCIEvent =&#xA;  [Procedure, Performance: &quot;Percutaneous Coronary Intervention&quot;] PCI&#xA;    where performanceTime starts at most 12 months before start MeasurementPeriod" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 16:18:09" modified="2014-07-30 17:26:08" complexity="1" status="Proposed"/>
+				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 16:18:09" modified="2014-10-28 21:09:35" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
@@ -12903,11 +12976,22 @@
 			<element xmi:idref="EAID_9AD8A28F_0024_442b_9115_C715FACE7404" xmi:type="uml:Class" name="ProcedureProposalOccurrence" scope="public">
 				<model package="EAPK_2841E90F_C905_487f_9D83_3986F70AC0B5" tpos="0" ea_localid="1370" ea_eleType="element"/>
 				<properties documentation="A proposal for a procedure to take place, e.g., generated by a CDS system or by a consulting clinician.&#xA;&#xA;&lt;b&gt;Example&lt;/b&gt;&#xA;&lt;u&gt;Expression from source knowledge artifact&lt;/u&gt;&#xA;Screen for syphilis infections&#xA;&#xA;&lt;u&gt;Expression in CQL+QUICK&lt;/u&gt;&#xA;let SyphScreen = &#xA;  [Procedure, Proposal: &quot;Screening Test for Syphillis&quot;]" isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 16:26:20" modified="2014-07-30 17:25:34" complexity="1" status="Proposed"/>
+				<project author="Claude Nanjo" version="1.0" phase="1.0" created="2014-07-08 16:26:20" modified="2014-10-28 21:16:33" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<modelDocument/>
-				<tags/>
+				<tags>
+					<tag xmi:id="EAID_9B799F9A_7193_4c37_B1E9_B88CE7C1ED14" name="profile.fhir.element.ClinicalStatement.additionalText" value="Other.notes(extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_06B24D43_6268_4a15_A39C_DED05BB2DB4A" name="profile.fhir.element.ClinicalStatement.encounter" value="Other.encounter(type=Encounter,extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_54701133_914F_4333_9ED5_798891350D07" name="profile.fhir.element.ClinicalStatement.statementAuthor" value="Other.statementAuthor(type=Practitioner,type=Patient,type=RelatedPerson,type=Device,extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_9B05D7F9_E07E_462b_BF41_E3D450B16B5E" name="profile.fhir.element.ClinicalStatement.statementDateTime" value="Other.statementDateTime(extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_9A5E7F24_52AD_4e01_9826_817B78F07038" name="profile.fhir.element.ClinicalStatement.statementSource" value="Other.source(type=Patient,type=RelatedPerson,type=Practitioner,type=Device,extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_49C8009E_4AEC_442c_8057_6EBFC1B15A78" name="profile.fhir.element.ClinicalStatement.subject" value="Other.subject(cardinality=1..1,type=Patient, extension=true)" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_D15130FA_5C71_4fc2_9B77_AA663D037849" name="profile.fhir.structure.name" value="ProcedureProposalOccurrence" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_A393884C_2A2F_4233_B2AA_11640FF741A3" name="profile.fhir.structure.publish" value="true" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_830285EA_8882_454b_81F5_65159B9E0B80" name="profile.fhir.structure.purpose" value="Represents a request for the performance of a procedure" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+					<tag xmi:id="EAID_C3B5C205_DEDB_4390_9624_1812E9B6E1C6" name="profile.fhir.structure.type" value="Other" modelElement="EAID_9AD8A28F_0024_442b_9115_C715FACE7404"/>
+				</tags>
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="statement"/>
 				<links>
@@ -18558,15 +18642,26 @@
 					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
 				</packageImport>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.proposedAtTime" name="profile.fhir.element.Proposal.proposedAtTime">
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.proposedAtTime-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.proposedAtTime">
-						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.proposedAtTime-base_Property" name="base_Property" association="Property_profile.fhir.element.Proposal.proposedAtTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
 					</ownedAttribute>
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.proposedAtTime-profile.fhir.element.Proposal.proposedAtTime" name="profile.fhir.element.Proposal.proposedAtTime">
 						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
 					</ownedAttribute>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.proposedAtTime" name="A_Class_profile.fhir.element.Proposal.proposedAtTime" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Class">
-					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.proposedAtTime" name="extension_profile.fhir.element.Proposal.proposedAtTime" type="profile.fhir.element.Proposal.proposedAtTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Class"/>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Proposal.proposedAtTime" name="A_Property_profile.fhir.element.Proposal.proposedAtTime" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.proposedAtTime" name="extension_profile.fhir.element.Proposal.proposedAtTime" type="profile.fhir.element.Proposal.proposedAtTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.proposedAtTime profile.fhir.element.Proposal.proposedAtTime-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" name="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation-profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" name="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" name="A_Property_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation profile.fhir.element.Procedure.approachBodySite.anatomicalLocation-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" name="extension_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" type="profile.fhir.element.Procedure.approachBodySite.anatomicalLocation" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.anatomicalLocation profile.fhir.element.Procedure.approachBodySite.anatomicalLocation-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="Experimental" name="Experimental">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="Experimental-base_Class" name="base_Class" association="Class_Experimental">
@@ -18606,6 +18701,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.structure.publish" name="A_Class_profile.fhir.structure.publish" memberEnd="extension_profile.fhir.structure.publish profile.fhir.structure.publish-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.structure.publish" name="extension_profile.fhir.structure.publish" type="profile.fhir.structure.publish" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.structure.publish profile.fhir.structure.publish-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.currentStatus.reason" name="profile.fhir.element.Action.currentStatus.reason">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.reason-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.currentStatus.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.reason-profile.fhir.element.Action.currentStatus.reason" name="profile.fhir.element.Action.currentStatus.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.currentStatus.reason" name="A_Property_profile.fhir.element.Action.currentStatus.reason" memberEnd="extension_profile.fhir.element.Action.currentStatus.reason profile.fhir.element.Action.currentStatus.reason-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.currentStatus.reason" name="extension_profile.fhir.element.Action.currentStatus.reason" type="profile.fhir.element.Action.currentStatus.reason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.currentStatus.reason profile.fhir.element.Action.currentStatus.reason-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.status" name="profile.fhir.element.Condition.status">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.status-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.status">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18639,6 +18745,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.skip" name="A_Property_profile.fhir.element.skip" memberEnd="extension_profile.fhir.element.skip profile.fhir.element.skip-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.skip" name="extension_profile.fhir.element.skip" type="profile.fhir.element.skip" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.skip profile.fhir.element.skip-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.statusHistory.statusUpdateTime" name="profile.fhir.element.Action.statusHistory.statusUpdateTime">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.statusUpdateTime-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.statusHistory.statusUpdateTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.statusUpdateTime-profile.fhir.element.Action.statusHistory.statusUpdateTime" name="profile.fhir.element.Action.statusHistory.statusUpdateTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.statusHistory.statusUpdateTime" name="A_Property_profile.fhir.element.Action.statusHistory.statusUpdateTime" memberEnd="extension_profile.fhir.element.Action.statusHistory.statusUpdateTime profile.fhir.element.Action.statusHistory.statusUpdateTime-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.statusHistory.statusUpdateTime" name="extension_profile.fhir.element.Action.statusHistory.statusUpdateTime" type="profile.fhir.element.Action.statusHistory.statusUpdateTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.statusHistory.statusUpdateTime profile.fhir.element.Action.statusHistory.statusUpdateTime-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.conditionQualifier" name="profile.fhir.element.Condition.conditionQualifier">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.conditionQualifier-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.conditionQualifier">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18651,15 +18768,15 @@
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.conditionQualifier" name="extension_profile.fhir.element.Condition.conditionQualifier" type="profile.fhir.element.Condition.conditionQualifier" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.conditionQualifier profile.fhir.element.Condition.conditionQualifier-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime" name="profile.fhir.element.Proposal.expectedPerformanceTime">
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.expectedPerformanceTime">
-						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime-base_Property" name="base_Property" association="Property_profile.fhir.element.Proposal.expectedPerformanceTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
 					</ownedAttribute>
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.expectedPerformanceTime-profile.fhir.element.Proposal.expectedPerformanceTime" name="profile.fhir.element.Proposal.expectedPerformanceTime">
 						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
 					</ownedAttribute>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.expectedPerformanceTime" name="A_Class_profile.fhir.element.Proposal.expectedPerformanceTime" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Class">
-					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.expectedPerformanceTime" name="extension_profile.fhir.element.Proposal.expectedPerformanceTime" type="profile.fhir.element.Proposal.expectedPerformanceTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Class"/>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Proposal.expectedPerformanceTime" name="A_Property_profile.fhir.element.Proposal.expectedPerformanceTime" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.expectedPerformanceTime" name="extension_profile.fhir.element.Proposal.expectedPerformanceTime" type="profile.fhir.element.Proposal.expectedPerformanceTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.expectedPerformanceTime profile.fhir.element.Proposal.expectedPerformanceTime-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="XSDUnion" name="XSDUnion">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="XSDUnion-base_Class" name="base_Class" association="Class_XSDUnion">
@@ -18718,6 +18835,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Generalization_Mixin" name="A_Generalization_Mixin" memberEnd="extension_Mixin Mixin-base_Generalization">
 					<ownedEnd xmi:id="extension_Mixin" name="extension_Mixin" type="Mixin" isComposite="true" lower="0" upper="1" memberEnd="extension_Mixin Mixin-base_Generalization"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.approachBodySite" name="profile.fhir.element.Procedure.approachBodySite">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.approachBodySite">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite-profile.fhir.element.Procedure.approachBodySite" name="profile.fhir.element.Procedure.approachBodySite">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.approachBodySite" name="A_Property_profile.fhir.element.Procedure.approachBodySite" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite profile.fhir.element.Procedure.approachBodySite-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.approachBodySite" name="extension_profile.fhir.element.Procedure.approachBodySite" type="profile.fhir.element.Procedure.approachBodySite" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite profile.fhir.element.Procedure.approachBodySite-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.encounter.equivalent" name="profile.fhir.element.ClinicalStatement.encounter.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.encounter.equivalent-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.encounter.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -18773,6 +18901,28 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.message" name="A_Property_profile.fhir.element.Communication.message" memberEnd="extension_profile.fhir.element.Communication.message profile.fhir.element.Communication.message-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.message" name="extension_profile.fhir.element.Communication.message" type="profile.fhir.element.Communication.message" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.message profile.fhir.element.Communication.message-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.currentStatus.status" name="profile.fhir.element.Action.currentStatus.status">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.status-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.currentStatus.status">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.status-profile.fhir.element.Action.currentStatus.status" name="profile.fhir.element.Action.currentStatus.status">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.currentStatus.status" name="A_Property_profile.fhir.element.Action.currentStatus.status" memberEnd="extension_profile.fhir.element.Action.currentStatus.status profile.fhir.element.Action.currentStatus.status-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.currentStatus.status" name="extension_profile.fhir.element.Action.currentStatus.status" type="profile.fhir.element.Action.currentStatus.status" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.currentStatus.status profile.fhir.element.Action.currentStatus.status-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.currentStatus" name="profile.fhir.element.Action.currentStatus">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.currentStatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus-profile.fhir.element.Action.currentStatus" name="profile.fhir.element.Action.currentStatus">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.currentStatus" name="A_Property_profile.fhir.element.Action.currentStatus" memberEnd="extension_profile.fhir.element.Action.currentStatus profile.fhir.element.Action.currentStatus-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.currentStatus" name="extension_profile.fhir.element.Action.currentStatus" type="profile.fhir.element.Action.currentStatus" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.currentStatus profile.fhir.element.Action.currentStatus-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="anonymousRole" name="anonymousRole">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="anonymousRole-base_Property" name="base_Property" association="Property_anonymousRole">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18817,6 +18967,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.certainty" name="A_Property_profile.fhir.element.Condition.certainty" memberEnd="extension_profile.fhir.element.Condition.certainty profile.fhir.element.Condition.certainty-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.certainty" name="extension_profile.fhir.element.Condition.certainty" type="profile.fhir.element.Condition.certainty" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.certainty profile.fhir.element.Condition.certainty-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.procedureMethod" name="profile.fhir.element.Procedure.procedureMethod">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureMethod-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.procedureMethod">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureMethod-profile.fhir.element.Procedure.procedureMethod" name="profile.fhir.element.Procedure.procedureMethod">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.procedureMethod" name="A_Property_profile.fhir.element.Procedure.procedureMethod" memberEnd="extension_profile.fhir.element.Procedure.procedureMethod profile.fhir.element.Procedure.procedureMethod-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.procedureMethod" name="extension_profile.fhir.element.Procedure.procedureMethod" type="profile.fhir.element.Procedure.procedureMethod" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.procedureMethod profile.fhir.element.Procedure.procedureMethod-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.statementAuthor" name="profile.fhir.element.ClinicalStatement.statementAuthor">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.statementAuthor-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.statementAuthor">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -18838,6 +18999,17 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.sender" name="A_Property_profile.fhir.element.Communication.sender" memberEnd="extension_profile.fhir.element.Communication.sender profile.fhir.element.Communication.sender-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.sender" name="extension_profile.fhir.element.Communication.sender" type="profile.fhir.element.Communication.sender" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.sender profile.fhir.element.Communication.sender-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.approachBodySite.laterality" name="profile.fhir.element.Procedure.approachBodySite.laterality">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.laterality-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.approachBodySite.laterality">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.laterality-profile.fhir.element.Procedure.approachBodySite.laterality" name="profile.fhir.element.Procedure.approachBodySite.laterality">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.approachBodySite.laterality" name="A_Property_profile.fhir.element.Procedure.approachBodySite.laterality" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.laterality profile.fhir.element.Procedure.approachBodySite.laterality-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.approachBodySite.laterality" name="extension_profile.fhir.element.Procedure.approachBodySite.laterality" type="profile.fhir.element.Procedure.approachBodySite.laterality" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.laterality profile.fhir.element.Procedure.approachBodySite.laterality-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.encounter" name="profile.fhir.element.ClinicalStatement.encounter">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.encounter-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.encounter">
@@ -18861,6 +19033,39 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.location[BodySite].laterality" name="A_Property_profile.fhir.element.Condition.location[BodySite].laterality" memberEnd="extension_profile.fhir.element.Condition.location[BodySite].laterality profile.fhir.element.Condition.location[BodySite].laterality-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.location[BodySite].laterality" name="extension_profile.fhir.element.Condition.location[BodySite].laterality" type="profile.fhir.element.Condition.location[BodySite].laterality" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.location[BodySite].laterality profile.fhir.element.Condition.location[BodySite].laterality-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.procedureSchedule" name="profile.fhir.element.Procedure.procedureSchedule">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureSchedule-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.procedureSchedule">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureSchedule-profile.fhir.element.Procedure.procedureSchedule" name="profile.fhir.element.Procedure.procedureSchedule">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.procedureSchedule" name="A_Property_profile.fhir.element.Procedure.procedureSchedule" memberEnd="extension_profile.fhir.element.Procedure.procedureSchedule profile.fhir.element.Procedure.procedureSchedule-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.procedureSchedule" name="extension_profile.fhir.element.Procedure.procedureSchedule" type="profile.fhir.element.Procedure.procedureSchedule" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.procedureSchedule profile.fhir.element.Procedure.procedureSchedule-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.currentStatus.statusUpdateTime" name="profile.fhir.element.Action.currentStatus.statusUpdateTime">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.statusUpdateTime-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.currentStatus.statusUpdateTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.currentStatus.statusUpdateTime-profile.fhir.element.Action.currentStatus.statusUpdateTime" name="profile.fhir.element.Action.currentStatus.statusUpdateTime">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.currentStatus.statusUpdateTime" name="A_Property_profile.fhir.element.Action.currentStatus.statusUpdateTime" memberEnd="extension_profile.fhir.element.Action.currentStatus.statusUpdateTime profile.fhir.element.Action.currentStatus.statusUpdateTime-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.currentStatus.statusUpdateTime" name="extension_profile.fhir.element.Action.currentStatus.statusUpdateTime" type="profile.fhir.element.Action.currentStatus.statusUpdateTime" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.currentStatus.statusUpdateTime profile.fhir.element.Action.currentStatus.statusUpdateTime-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.approachBodySite.code" name="profile.fhir.element.Procedure.approachBodySite.code">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.code-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.approachBodySite.code">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.approachBodySite.code-profile.fhir.element.Procedure.approachBodySite.code" name="profile.fhir.element.Procedure.approachBodySite.code">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.approachBodySite.code" name="A_Property_profile.fhir.element.Procedure.approachBodySite.code" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.code profile.fhir.element.Procedure.approachBodySite.code-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.approachBodySite.code" name="extension_profile.fhir.element.Procedure.approachBodySite.code" type="profile.fhir.element.Procedure.approachBodySite.code" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.approachBodySite.code profile.fhir.element.Procedure.approachBodySite.code-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.additionalText" name="profile.fhir.element.ClinicalStatement.additionalText">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.additionalText-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.additionalText">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -18872,6 +19077,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.ClinicalStatement.additionalText" name="A_Class_profile.fhir.element.ClinicalStatement.additionalText" memberEnd="extension_profile.fhir.element.ClinicalStatement.additionalText profile.fhir.element.ClinicalStatement.additionalText-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.element.ClinicalStatement.additionalText" name="extension_profile.fhir.element.ClinicalStatement.additionalText" type="profile.fhir.element.ClinicalStatement.additionalText" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.ClinicalStatement.additionalText profile.fhir.element.ClinicalStatement.additionalText-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.targetBodySite" name="profile.fhir.element.Procedure.targetBodySite">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.targetBodySite">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite-profile.fhir.element.Procedure.targetBodySite" name="profile.fhir.element.Procedure.targetBodySite">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.targetBodySite" name="A_Property_profile.fhir.element.Procedure.targetBodySite" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite profile.fhir.element.Procedure.targetBodySite-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.targetBodySite" name="extension_profile.fhir.element.Procedure.targetBodySite" type="profile.fhir.element.Procedure.targetBodySite" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite profile.fhir.element.Procedure.targetBodySite-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="internal" name="internal">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="internal-base_Class" name="base_Class" association="Class_internal">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -18881,15 +19097,26 @@
 					<ownedEnd xmi:id="extension_internal" name="extension_internal" type="internal" isComposite="true" lower="0" upper="1" memberEnd="extension_internal internal-base_Class"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.urgency" name="profile.fhir.element.Proposal.urgency">
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.urgency-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.urgency">
-						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.urgency-base_Property" name="base_Property" association="Property_profile.fhir.element.Proposal.urgency">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
 					</ownedAttribute>
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.urgency-profile.fhir.element.Proposal.urgency" name="profile.fhir.element.Proposal.urgency">
 						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
 					</ownedAttribute>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.urgency" name="A_Class_profile.fhir.element.Proposal.urgency" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Class">
-					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.urgency" name="extension_profile.fhir.element.Proposal.urgency" type="profile.fhir.element.Proposal.urgency" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Class"/>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Proposal.urgency" name="A_Property_profile.fhir.element.Proposal.urgency" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.urgency" name="extension_profile.fhir.element.Proposal.urgency" type="profile.fhir.element.Proposal.urgency" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.urgency profile.fhir.element.Proposal.urgency-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.indication.reason" name="profile.fhir.element.Action.indication.reason">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.indication.reason-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.indication.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.indication.reason-profile.fhir.element.Action.indication.reason" name="profile.fhir.element.Action.indication.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.indication.reason" name="A_Property_profile.fhir.element.Action.indication.reason" memberEnd="extension_profile.fhir.element.Action.indication.reason profile.fhir.element.Action.indication.reason-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.indication.reason" name="extension_profile.fhir.element.Action.indication.reason" type="profile.fhir.element.Action.indication.reason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.indication.reason profile.fhir.element.Action.indication.reason-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.code.equivalent" name="profile.fhir.element.Condition.code.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.code.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.code.equivalent">
@@ -18932,6 +19159,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.structure.type" name="A_Class_profile.fhir.structure.type" memberEnd="extension_profile.fhir.structure.type profile.fhir.structure.type-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.structure.type" name="extension_profile.fhir.structure.type" type="profile.fhir.structure.type" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.structure.type profile.fhir.structure.type-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.targetBodySite.laterality" name="profile.fhir.element.Procedure.targetBodySite.laterality">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.laterality-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.targetBodySite.laterality">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.laterality-profile.fhir.element.Procedure.targetBodySite.laterality" name="profile.fhir.element.Procedure.targetBodySite.laterality">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.targetBodySite.laterality" name="A_Property_profile.fhir.element.Procedure.targetBodySite.laterality" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.laterality profile.fhir.element.Procedure.targetBodySite.laterality-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.targetBodySite.laterality" name="extension_profile.fhir.element.Procedure.targetBodySite.laterality" type="profile.fhir.element.Procedure.targetBodySite.laterality" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.laterality profile.fhir.element.Procedure.targetBodySite.laterality-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.category.equivalent" name="profile.fhir.element.Condition.category.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.category.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.category.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18944,15 +19182,15 @@
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.category.equivalent" name="extension_profile.fhir.element.Condition.category.equivalent" type="profile.fhir.element.Condition.category.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.category.equivalent profile.fhir.element.Condition.category.equivalent-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.originationMode" name="profile.fhir.element.Proposal.originationMode">
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.originationMode-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.originationMode">
-						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.originationMode-base_Property" name="base_Property" association="Property_profile.fhir.element.Proposal.originationMode">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
 					</ownedAttribute>
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.originationMode-profile.fhir.element.Proposal.originationMode" name="profile.fhir.element.Proposal.originationMode">
 						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
 					</ownedAttribute>
 				</packagedElement>
-				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.originationMode" name="A_Class_profile.fhir.element.Proposal.originationMode" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Class">
-					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.originationMode" name="extension_profile.fhir.element.Proposal.originationMode" type="profile.fhir.element.Proposal.originationMode" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Class"/>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Proposal.originationMode" name="A_Property_profile.fhir.element.Proposal.originationMode" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.originationMode" name="extension_profile.fhir.element.Proposal.originationMode" type="profile.fhir.element.Proposal.originationMode" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.originationMode profile.fhir.element.Proposal.originationMode-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.profileId" name="profile.fhir.element.ClinicalStatement.profileId">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.profileId-base_Property" name="base_Property" association="Property_profile.fhir.element.ClinicalStatement.profileId">
@@ -18976,6 +19214,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.location[BodySite].anatomicalLocation" name="A_Property_profile.fhir.element.Condition.location[BodySite].anatomicalLocation" memberEnd="extension_profile.fhir.element.Condition.location[BodySite].anatomicalLocation profile.fhir.element.Condition.location[BodySite].anatomicalLocation-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.location[BodySite].anatomicalLocation" name="extension_profile.fhir.element.Condition.location[BodySite].anatomicalLocation" type="profile.fhir.element.Condition.location[BodySite].anatomicalLocation" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.location[BodySite].anatomicalLocation profile.fhir.element.Condition.location[BodySite].anatomicalLocation-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.targetBodySite.directionality" name="profile.fhir.element.Procedure.targetBodySite.directionality">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.directionality-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.targetBodySite.directionality">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.directionality-profile.fhir.element.Procedure.targetBodySite.directionality" name="profile.fhir.element.Procedure.targetBodySite.directionality">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.targetBodySite.directionality" name="A_Property_profile.fhir.element.Procedure.targetBodySite.directionality" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.directionality profile.fhir.element.Procedure.targetBodySite.directionality-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.targetBodySite.directionality" name="extension_profile.fhir.element.Procedure.targetBodySite.directionality" type="profile.fhir.element.Procedure.targetBodySite.directionality" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.directionality profile.fhir.element.Procedure.targetBodySite.directionality-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.severity.equivalent" name="profile.fhir.element.Condition.severity.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.severity.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.severity.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -18986,6 +19235,39 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.severity.equivalent" name="A_Property_profile.fhir.element.Condition.severity.equivalent" memberEnd="extension_profile.fhir.element.Condition.severity.equivalent profile.fhir.element.Condition.severity.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.severity.equivalent" name="extension_profile.fhir.element.Condition.severity.equivalent" type="profile.fhir.element.Condition.severity.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.severity.equivalent profile.fhir.element.Condition.severity.equivalent-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.procedureCode" name="profile.fhir.element.Procedure.procedureCode">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureCode-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.procedureCode">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.procedureCode-profile.fhir.element.Procedure.procedureCode" name="profile.fhir.element.Procedure.procedureCode">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.procedureCode" name="A_Property_profile.fhir.element.Procedure.procedureCode" memberEnd="extension_profile.fhir.element.Procedure.procedureCode profile.fhir.element.Procedure.procedureCode-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.procedureCode" name="extension_profile.fhir.element.Procedure.procedureCode" type="profile.fhir.element.Procedure.procedureCode" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.procedureCode profile.fhir.element.Procedure.procedureCode-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.providerPreference" name="profile.fhir.element.Action.providerPreference">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.providerPreference-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.providerPreference">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.providerPreference-profile.fhir.element.Action.providerPreference" name="profile.fhir.element.Action.providerPreference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.providerPreference" name="A_Property_profile.fhir.element.Action.providerPreference" memberEnd="extension_profile.fhir.element.Action.providerPreference profile.fhir.element.Action.providerPreference-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.providerPreference" name="extension_profile.fhir.element.Action.providerPreference" type="profile.fhir.element.Action.providerPreference" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.providerPreference profile.fhir.element.Action.providerPreference-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.prnReason.reason" name="profile.fhir.element.Proposal.prnReason.reason">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason.reason-base_Property" name="base_Property" association="Property_profile.fhir.element.Proposal.prnReason.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason.reason-profile.fhir.element.Proposal.prnReason.reason" name="profile.fhir.element.Proposal.prnReason.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Proposal.prnReason.reason" name="A_Property_profile.fhir.element.Proposal.prnReason.reason" memberEnd="extension_profile.fhir.element.Proposal.prnReason.reason profile.fhir.element.Proposal.prnReason.reason-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.prnReason.reason" name="extension_profile.fhir.element.Proposal.prnReason.reason" type="profile.fhir.element.Proposal.prnReason.reason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.prnReason.reason profile.fhir.element.Proposal.prnReason.reason-base_Property"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Observation.observedAtTime" name="profile.fhir.element.Observation.observedAtTime">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Observation.observedAtTime-base_Class" name="base_Class" association="Class_profile.fhir.element.Observation.observedAtTime">
@@ -19031,6 +19313,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Communication.medium" name="A_Property_profile.fhir.element.Communication.medium" memberEnd="extension_profile.fhir.element.Communication.medium profile.fhir.element.Communication.medium-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Communication.medium" name="extension_profile.fhir.element.Communication.medium" type="profile.fhir.element.Communication.medium" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Communication.medium profile.fhir.element.Communication.medium-base_Property"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.statusHistory.reason" name="profile.fhir.element.Action.statusHistory.reason">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.reason-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.statusHistory.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.reason-profile.fhir.element.Action.statusHistory.reason" name="profile.fhir.element.Action.statusHistory.reason">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.statusHistory.reason" name="A_Property_profile.fhir.element.Action.statusHistory.reason" memberEnd="extension_profile.fhir.element.Action.statusHistory.reason profile.fhir.element.Action.statusHistory.reason-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.statusHistory.reason" name="extension_profile.fhir.element.Action.statusHistory.reason" type="profile.fhir.element.Action.statusHistory.reason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.statusHistory.reason profile.fhir.element.Action.statusHistory.reason-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="XSDSchema" name="XSDSchema">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="XSDSchema-base_Package" name="base_Package" association="Package_XSDSchema">
 						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
@@ -19060,17 +19353,6 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_derivation" name="A_Class_derivation" memberEnd="extension_derivation derivation-base_Class">
 					<ownedEnd xmi:id="extension_derivation" name="extension_derivation" type="derivation" isComposite="true" lower="0" upper="1" memberEnd="extension_derivation derivation-base_Class"/>
-				</packagedElement>
-				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Proposal.prnReason" name="profile.fhir.element.Proposal.prnReason">
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason-base_Class" name="base_Class" association="Class_profile.fhir.element.Proposal.prnReason">
-						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
-					</ownedAttribute>
-					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Proposal.prnReason-profile.fhir.element.Proposal.prnReason" name="profile.fhir.element.Proposal.prnReason">
-						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
-					</ownedAttribute>
-				</packagedElement>
-				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.Proposal.prnReason" name="A_Class_profile.fhir.element.Proposal.prnReason" memberEnd="extension_profile.fhir.element.Proposal.prnReason profile.fhir.element.Proposal.prnReason-base_Class">
-					<ownedEnd xmi:id="extension_profile.fhir.element.Proposal.prnReason" name="extension_profile.fhir.element.Proposal.prnReason" type="profile.fhir.element.Proposal.prnReason" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Proposal.prnReason profile.fhir.element.Proposal.prnReason-base_Class"/>
 				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Communication.recipient" name="profile.fhir.element.Communication.recipient">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Communication.recipient-base_Property" name="base_Property" association="Property_profile.fhir.element.Communication.recipient">
@@ -19105,6 +19387,17 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.structure.purpose" name="A_Class_profile.fhir.structure.purpose" memberEnd="extension_profile.fhir.structure.purpose profile.fhir.structure.purpose-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.structure.purpose" name="extension_profile.fhir.structure.purpose" type="profile.fhir.structure.purpose" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.structure.purpose profile.fhir.structure.purpose-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.statusHistory" name="profile.fhir.element.Action.statusHistory">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.statusHistory">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory-profile.fhir.element.Action.statusHistory" name="profile.fhir.element.Action.statusHistory">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.statusHistory" name="A_Property_profile.fhir.element.Action.statusHistory" memberEnd="extension_profile.fhir.element.Action.statusHistory profile.fhir.element.Action.statusHistory-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.statusHistory" name="extension_profile.fhir.element.Action.statusHistory" type="profile.fhir.element.Action.statusHistory" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.statusHistory profile.fhir.element.Action.statusHistory-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.ClinicalStatement.subject.equivalent" name="profile.fhir.element.ClinicalStatement.subject.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.ClinicalStatement.subject.equivalent-base_Class" name="base_Class" association="Class_profile.fhir.element.ClinicalStatement.subject.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
@@ -19116,6 +19409,28 @@
 				<packagedElement xmi:type="uml:Extension" xmi:id="Class_profile.fhir.element.ClinicalStatement.subject.equivalent" name="A_Class_profile.fhir.element.ClinicalStatement.subject.equivalent" memberEnd="extension_profile.fhir.element.ClinicalStatement.subject.equivalent profile.fhir.element.ClinicalStatement.subject.equivalent-base_Class">
 					<ownedEnd xmi:id="extension_profile.fhir.element.ClinicalStatement.subject.equivalent" name="extension_profile.fhir.element.ClinicalStatement.subject.equivalent" type="profile.fhir.element.ClinicalStatement.subject.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.ClinicalStatement.subject.equivalent profile.fhir.element.ClinicalStatement.subject.equivalent-base_Class"/>
 				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.patientPreference" name="profile.fhir.element.Action.patientPreference">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.patientPreference-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.patientPreference">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.patientPreference-profile.fhir.element.Action.patientPreference" name="profile.fhir.element.Action.patientPreference">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.patientPreference" name="A_Property_profile.fhir.element.Action.patientPreference" memberEnd="extension_profile.fhir.element.Action.patientPreference profile.fhir.element.Action.patientPreference-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.patientPreference" name="extension_profile.fhir.element.Action.patientPreference" type="profile.fhir.element.Action.patientPreference" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.patientPreference profile.fhir.element.Action.patientPreference-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Action.statusHistory.status" name="profile.fhir.element.Action.statusHistory.status">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.status-base_Property" name="base_Property" association="Property_profile.fhir.element.Action.statusHistory.status">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Action.statusHistory.status-profile.fhir.element.Action.statusHistory.status" name="profile.fhir.element.Action.statusHistory.status">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Action.statusHistory.status" name="A_Property_profile.fhir.element.Action.statusHistory.status" memberEnd="extension_profile.fhir.element.Action.statusHistory.status profile.fhir.element.Action.statusHistory.status-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Action.statusHistory.status" name="extension_profile.fhir.element.Action.statusHistory.status" type="profile.fhir.element.Action.statusHistory.status" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Action.statusHistory.status profile.fhir.element.Action.statusHistory.status-base_Property"/>
+				</packagedElement>
 				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Condition.stage.equivalent" name="profile.fhir.element.Condition.stage.equivalent">
 					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Condition.stage.equivalent-base_Property" name="base_Property" association="Property_profile.fhir.element.Condition.stage.equivalent">
 						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
@@ -19126,6 +19441,17 @@
 				</packagedElement>
 				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Condition.stage.equivalent" name="A_Property_profile.fhir.element.Condition.stage.equivalent" memberEnd="extension_profile.fhir.element.Condition.stage.equivalent profile.fhir.element.Condition.stage.equivalent-base_Property">
 					<ownedEnd xmi:id="extension_profile.fhir.element.Condition.stage.equivalent" name="extension_profile.fhir.element.Condition.stage.equivalent" type="profile.fhir.element.Condition.stage.equivalent" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Condition.stage.equivalent profile.fhir.element.Condition.stage.equivalent-base_Property"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" name="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation-base_Property" name="base_Property" association="Property_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Property"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation-profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" name="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Property_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" name="A_Property_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation profile.fhir.element.Procedure.targetBodySite.anatomicalLocation-base_Property">
+					<ownedEnd xmi:id="extension_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" name="extension_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" type="profile.fhir.element.Procedure.targetBodySite.anatomicalLocation" isComposite="true" lower="0" upper="1" memberEnd="extension_profile.fhir.element.Procedure.targetBodySite.anatomicalLocation profile.fhir.element.Procedure.targetBodySite.anatomicalLocation-base_Property"/>
 				</packagedElement>
 			</uml:Profile>
 			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="9A858348-8" nsPrefix="RDF" name="RDF" metamodelReference="mmref01">

@@ -34,7 +34,7 @@ import org.socraticgrid.uml.UmlModel;
 public class ProcedureProposalTest extends TestBase {
 	
 	@Test
-	public void testGenerateConditionOccurrenceProfile() {
+	public void testProcedureProposal() {
 		UmlClass conditionOccurrence = (UmlClass)model.getObjectByName("ProcedureProposalOccurrence");
 		Profile profile = profileGenerator.generateSimpleProfile(conditionOccurrence, new UmlClass("Other"));
 		System.out.println(FhirProfileGenerator.generateProfileAsXml(profile));

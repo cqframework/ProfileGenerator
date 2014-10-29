@@ -58,6 +58,7 @@ public class FhirProfileGenerator {
 	//TODO Handle BodySite type
 	//TODO Map effectiveTime to ObservedAtTime. Make statementDateTime an FHIR extension.
 	//TODO Convert markup to markdown
+	//TODO Implement tag overrides based on where they are defined in the hierarchy
 	
 	//QUESTION: Is modifyingExtension constraint valid? Do I need to do this for every attribute as well? How about their extensions? Do we just make part of spec to reject? What if attribute is required?
 	//QUESTION: Do we wish to use QUICK formal documentation on classes and attributes or leave the FHIR defaults?
