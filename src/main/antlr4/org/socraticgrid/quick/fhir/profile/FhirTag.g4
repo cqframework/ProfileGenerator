@@ -78,7 +78,7 @@ name
 	;
 	
 parameters
-	: LPAREN (cardinality COMMA)? (aliasRule COMMA)? (complexTypeRule COMMA)? extension RPAREN
+	: LPAREN (cardinality COMMA)? (aliasRule COMMA)? (complexTypeRule COMMA)? (bindingRule COMMA)? extension RPAREN
 	;
 	
 cardinality
@@ -100,10 +100,32 @@ complexTypeRule
 simpleTypeRule
 	: TYPE EQUALS name
 	;
-		
+	
+bindingRule
+	: bindingConformanceRule COMMA bindingReferenceRule
+	;
+	
+bindingConformanceRule
+	: CONFORMANCE EQUALS conformanceValue
+	;
+	
+bindingReferenceRule
+	: REFERENCE EQUALS url
+	;
+
+conformanceValue
+	: 'required'
+	| 'preferred'
+	| 'example'
+	;	
+	
 high
 	: UNLIMITED
 	| INTEGER
+	;
+	
+url
+	: SCHEME + COLON + PATH_SEPARATOR + PATH_SEPARATOR IDENTIFIER (DELIM IDENTIFIER)* (PATH_SEPARATOR IDENTIFIER)* (DELIM IDENTIFIER)? //TODO address more generally later
 	;
 
 // Lexer Rules
@@ -160,12 +182,25 @@ BOOLEAN
 	: 'true' | 'false'
 	;
 	
+SCHEME
+	: 'http'
+	| 'https'
+	;
+	
+PATH_SEPARATOR
+	: '/'
+	;
+	
 EQUALS
 	: '='
 	;
 	
 COMMA
 	: ',' 
+	;
+	
+COLON
+	: ':'
 	;
 	
 LPAREN
@@ -198,6 +233,14 @@ SAMEAS
 	
 RANGE_DELIM
 	: '..'
+	;
+	
+CONFORMANCE
+	: 'conformance'
+	;
+	
+REFERENCE
+	: 'reference'
 	;
 
 WS

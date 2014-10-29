@@ -2,22 +2,29 @@ package org.socraticgrid.quick.fhir.profile;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
 import org.hl7.fhir.instance.formats.XmlComposer;
 import org.hl7.fhir.instance.model.Contact;
+import org.hl7.fhir.instance.model.Contact.ContactSystem;
 import org.hl7.fhir.instance.model.DateAndTime;
 import org.hl7.fhir.instance.model.Profile;
+import org.hl7.fhir.instance.model.Profile.BindingConformance;
 import org.hl7.fhir.instance.model.Profile.ConstraintComponent;
 import org.hl7.fhir.instance.model.Profile.ElementComponent;
+import org.hl7.fhir.instance.model.Profile.ElementDefinitionBindingComponent;
 import org.hl7.fhir.instance.model.Profile.ElementDefinitionComponent;
 import org.hl7.fhir.instance.model.Profile.ElementDefinitionMappingComponent;
 import org.hl7.fhir.instance.model.Profile.ExtensionContext;
 import org.hl7.fhir.instance.model.Profile.ProfileExtensionDefnComponent;
+import org.hl7.fhir.instance.model.Profile.ProfileMappingComponent;
 import org.hl7.fhir.instance.model.Profile.ProfileStructureComponent;
 import org.hl7.fhir.instance.model.Profile.ResourceProfileStatus;
 import org.hl7.fhir.instance.model.Profile.TypeRefComponent;
+import org.hl7.fhir.instance.model.StringType;
 import org.socraticgrid.uml.OneToOnePropertyMapping;
 import org.socraticgrid.uml.UmlClass;
 import org.socraticgrid.uml.UmlProperty;
@@ -50,12 +57,13 @@ public class FhirProfileGenerator {
 	//TODO Constrain out status = 'Refuted'
 	//TODO Handle BodySite type
 	//TODO Map effectiveTime to ObservedAtTime. Make statementDateTime an FHIR extension.
+	//TODO Convert markup to markdown
 	
 	//QUESTION: Is modifyingExtension constraint valid? Do I need to do this for every attribute as well? How about their extensions? Do we just make part of spec to reject? What if attribute is required?
 	//QUESTION: Do we wish to use QUICK formal documentation on classes and attributes or leave the FHIR defaults?
 	
 	private static final Logger LOGGER = Logger.getLogger(FhirProfileGenerator.class.getName()); 
-	private static final String QUICK_CORE_PROFILE_PATH = "http://hl7.org/quick/profile/";//TODO Fix based on Lloyd's direction
+	private static final String QUICK_CORE_PROFILE_PATH = "http://hl7.org/fhir/Profile/";
 	private static final String MAP_IDENTITY = "quick";
 	
 	public FhirProfileGenerator() {}
@@ -71,14 +79,16 @@ public class FhirProfileGenerator {
 	 * @param target
 	 */
 	public Profile generateSimpleProfile(UmlClass source, UmlClass target) {//TODO Build target from structure tag information
+		ProfileConfigurationLoader loader = new ProfileConfigurationLoader();
+		ProfileMetadata metadata = loader.loadProfileConfigurations();
 		Profile profile = new Profile();
 		FhirClassAnnotationHandler fhirClass = new FhirClassAnnotationHandler(source, target);
 		List<OneToOnePropertyMapping> mappings = fhirClass.initializeMappings();
-		populateProfileHeaderInformation(profile, fhirClass);
+		populateProfileHeaderInformation(profile, fhirClass, metadata);
 		ProfileStructureComponent structure = addStructureWithDifferential(profile, fhirClass);
 		ConstraintComponent constraint = structure.getDifferential();
 		buildRootElement(fhirClass, constraint);
-		constrainModifierExtension(fhirClass, constraint);
+		constrainModifierExtensions(fhirClass, constraint, metadata);
 		processMappings(profile, mappings, constraint);
 		return profile;
 	}
@@ -90,20 +100,25 @@ public class FhirProfileGenerator {
 	 * @param profile
 	 * @param fhirClass
 	 */
-	public void populateProfileHeaderInformation(Profile profile, FhirClassAnnotationHandler fhirClass) {
-		ProfileConfigurationLoader loader = new ProfileConfigurationLoader();
-		ProfileMetadata metadata = loader.loadProfileConfigurations();
-		profile.setUrlSimple(metadata.getSharedProperty("profileRootPath") + fhirClass.getStructureName());
+	public void populateProfileHeaderInformation(Profile profile, FhirClassAnnotationHandler fhirClass, ProfileMetadata metadata) {
+		profile.setUrlSimple(metadata.getSharedProperty("profileRootPath") + fhirClass.getTargetResource().getName() + "-" + fhirClass.getStructureName());
 		profile.setVersionSimple(metadata.getSharedProperty("profileBaseVersion"));
 		profile.setNameSimple(fhirClass.getStructureName());
 		profile.setPublisherSimple(metadata.getSharedProperty("profilePublisher"));
-		Contact contact = profile.addTelecom();
-		contact.setValueSimple(metadata.getSharedProperty("profileEmailContact"));
+		Contact contact1 = profile.addTelecom();
+		contact1.setSystemSimple(ContactSystem.url);
+		contact1.setValueSimple(metadata.getSharedProperty("profileContact"));
+		Contact contact2 = profile.addTelecom();
+		contact2.setSystemSimple(ContactSystem.url);
+		contact2.setValueSimple("http://www.hl7.org");
 		profile.setDescriptionSimple(metadata.getPropertyForProfile(fhirClass.getStructureName(), "profileDescription"));
 		profile.setStatusSimple(ResourceProfileStatus.draft);//TODO read from config
 		profile.setRequirementsSimple(metadata.getPropertyForProfile(fhirClass.getStructureName(), "profileRequirements"));
 		profile.setDateSimple(DateAndTime.now());//TODO Fix as needed
 		profile.setFhirVersionSimple(metadata.getSharedProperty("profileFhirVersion"));
+		ProfileMappingComponent mapping = profile.addMapping();
+		mapping.setIdentitySimple("quick");
+		mapping.setNameSimple(fhirClass.getUmlClassName());
 	}
 	
 	/**
@@ -171,14 +186,28 @@ public class FhirProfileGenerator {
 	}
 	
 	/**
-	 * Method constrains the root of the profile to not support modifying extensions.
+	 * Method constrains the root of the profile and enumerated dependent structures to not support modifying extensions.
+	 * 
+	 * Requirement provided by Lloyd McKenzie
 	 * 
 	 * @param fhirClass
 	 * @param constraint
 	 */
-	public void constrainModifierExtension(FhirClassAnnotationHandler fhirClass, ConstraintComponent constraint) {
+	public void constrainModifierExtensions(FhirClassAnnotationHandler fhirClass, ConstraintComponent constraint, ProfileMetadata metadata) {
+		List<String> constrainedItems = new ArrayList<String>();
+		constrainedItems.add(fhirClass.getStructureType());
+		String structures = metadata.getPropertyForProfile(fhirClass.getStructureName(), "constrainModifyingExtensions");
+		if(structures != null) {
+			Collections.addAll(constrainedItems, structures.split(","));
+		}
+		for(String constrainedItem : constrainedItems) {
+			constrainModifierExtension(constraint, constrainedItem);
+		}
+	}
+	
+	public void constrainModifierExtension(ConstraintComponent constraint, String constrainedItem) {
 		ElementComponent element = constraint.addElement();
-		element.setPathSimple(fhirClass.getStructureType() + "." + "modifierExtension");
+		element.setPathSimple(constrainedItem + "." + "modifierExtension");
 		element.setNameSimple("modifierExtension");
 		ElementDefinitionComponent definition = new ElementDefinitionComponent();
 		element.setDefinition(definition);
@@ -205,18 +234,17 @@ public class FhirProfileGenerator {
 		definition.setMaxSimple((mapping.getDestination().getHigh() == -1)?"*":mapping.getDestination().getHigh().toString());//TODO move to the right place
 		definition.setFormalSimple(mapping.getDestination().getDocumentation());
 		List<UmlClass> types = mapping.getDestination().getTypes();
-		for(UmlClass type : types) {
-			if(mapping.isExtension()) {
-				processExtendedTypes(mapping.getDestination(), definition);
-			} else {
+		if(mapping.isExtension()) { //Assumes that the reference to the extension does not override the types defined in the extension definition.
+			processExtendedTypes(mapping.getDestination(), definition);
+			addClassAttributeExtension(profile, mapping);
+		} else {
+			for(UmlClass type : types) {
 				processNonExtendedType(type, definition);
 			}
 		}
 		setQuickMapping(mapping.getSourcePath(), definition);
+		setTerminologyBindings(mapping, definition);
 		definition.setMustSupportSimple(true);
-		if(mapping.isExtension()) {
-			addClassAttributeExtension(profile, mapping);
-		}
 	}
 	
 	public void setElementPath(OneToOnePropertyMapping mapping, ElementComponent element) {
@@ -232,7 +260,7 @@ public class FhirProfileGenerator {
 		extension.setCodeSimple(mapping.getDestination().getName());
 		extension.setDisplaySimple(mapping.getDestination().getName());
 		extension.setContextTypeSimple(ExtensionContext.resource);
-		extension.addContextSimple("Any");
+		extension.addContextSimple("Any");//TODO Hard coded based on examples seen thus far. Relax this when needed.
 		
 		ElementComponent extensionDefinition = extension.addElement();
 		extensionDefinition.setPathSimple(mapping.getDestination().getName());
@@ -244,7 +272,10 @@ public class FhirProfileGenerator {
 	}
 	
 	public void defineElement(OneToOnePropertyMapping mapping, ElementDefinitionComponent definition, boolean isExtension, boolean includeMapping) {
-		processNonExtendedType(mapping.getDestination().getFirstType(), definition);
+		List<UmlClass> types = mapping.getDestination().getTypes();
+		for(UmlClass type : types) {
+			processNonExtendedType(type, definition);
+		}
 		if(includeMapping) {
 			setQuickMapping(mapping.getDestination(), definition);
 		}
@@ -252,6 +283,35 @@ public class FhirProfileGenerator {
 			definition.setFormalSimple(mapping.getDestination().getDocumentation());
 			definition.setMinSimple(mapping.getDestination().getLow());
 			definition.setMaxSimple((mapping.getDestination().getHigh() == -1)?"*":mapping.getDestination().getHigh().toString());//TODO move somewhere else?
+		}
+	}
+	
+	/**
+	 * Assigns to profile element definition the corresponding terminology bindings to the QUICK model.
+	 * 
+	 * @param mapping
+	 * @param definition
+	 */
+	public void setTerminologyBindings(OneToOnePropertyMapping mapping, ElementDefinitionComponent definition) {
+		if(mapping.getBinding() != null) {
+			ElementDefinitionBindingComponent binding = new ElementDefinitionBindingComponent();
+			binding.setConformanceSimple(getConformance(mapping.getBinding().getConformance()));
+			StringType url = new StringType();//TODO Fix in FHIR reference implementation
+			url.setValue(mapping.getBinding().getValueSetUri());
+			binding.setReference(url);
+			definition.setBinding(binding);
+		}
+	}
+	
+	public BindingConformance getConformance(String conformance) {
+		if(conformance.equalsIgnoreCase("required")) {
+			return BindingConformance.required;
+		} else if(conformance.equalsIgnoreCase("preferred")) {
+			return BindingConformance.preferred;
+		} else if(conformance.equalsIgnoreCase("example")) {
+			return BindingConformance.example;
+		} else {
+			return null;
 		}
 	}
 	
@@ -309,7 +369,7 @@ public class FhirProfileGenerator {
 		} else if(hasProfiledFhirType(typeName)) { //TODO: Handle the case where the attribute has tag: profile.fhir.element.type.profile
 			type.setCodeSimple(ProfiledFhirType.getFhirTypeName(typeName));
 			type.setProfileSimple(QUICK_CORE_PROFILE_PATH + ProfiledFhirType.getFhirTypeName(typeName));
-		}else  {
+		} else  {
 			type.setProfileSimple(QUICK_CORE_PROFILE_PATH + typeName);
 		}
 	}

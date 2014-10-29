@@ -17,6 +17,7 @@ import org.socraticgrid.quick.fhir.profile.FhirTagParser.AliasRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.CardinalityContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.EquivalentElementRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.ExtensionContext;
+import org.socraticgrid.quick.fhir.profile.FhirTagParser.HandleTagRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.SkipElementRuleContext;
 import org.socraticgrid.uml.OneToOnePropertyMapping;
 import org.socraticgrid.uml.TaggedValue;
@@ -39,6 +40,11 @@ public class FhirTagParserTest {//TODO Add negative cases
 	private final String badTag1 = "profile.fhir.ClinicalStatement.statementAuthor=Other.author(extension=false)";
 	private final String structureName = "profile.fhir.structure.name=CommunicationProposalOccurrence";
 	private final String structurePurpose = "profile.fhir.structure.purpose=Represents a clinical statement stating that a communication proposal has been made.";
+	private final String bindingExample = "profile.fhir.element.Condition.code=Condition.code(cardinality=1..2, conformance=required, reference=http://www.hla.org/aaa/bindings/schemabindings.xml, extension=false)";
+	private final String conformanceRuleExample = "conformance=required";
+	private final String referenceRuleExample = "reference=http://www.hla.org/aaa/bindings/schemabindings.xml";
+	private final String bindingRuleExample = "conformance=required,  reference=http://www.hla.org/aaa/bindings/schemabindings.xml";
+	private final String parameterExample = "(cardinality=1..2, conformance=required, reference=http://www.hla.org/aaa/bindings/schemabindings.xml, extension=false)";
 	
 	private final UmlClass targetResource = new UmlClass("Condition");
 	private FhirTagParseErrorListener errorListener;
@@ -170,6 +176,65 @@ public class FhirTagParserTest {//TODO Add negative cases
 			ExtensionContext context = parser.extension();
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
 			assertEquals(0, errorListener.getParseErrorCount());
+		} catch(RecognitionException re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testParameterRule() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(parameterExample, errorListener);
+			parser.parameters();
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testBindingConformanceRule() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(conformanceRuleExample, errorListener);
+			parser.bindingConformanceRule();
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testBindingReferenceRule() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(referenceRuleExample, errorListener);
+			parser.bindingReferenceRule();
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testBindingRule() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(bindingRuleExample, errorListener);
+			parser.bindingRule();
+			assertFalse(errorListener.hasErrors());
+		} catch(Exception re) {
+			fail();
+		}
+	}
+	
+	@Test
+	public void testBindingExample() {
+		try {
+			FhirTagParser parser = MappingAnnotationListener.setUpParser(bindingExample, errorListener);
+			HandleTagRuleContext context = parser.handleTagRule();
+			System.out.println(context.toStringTree());
+			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
+			assertEquals(0, errorListener.getParseErrorCount());
+			assertEquals("required", mapping.getBinding().getConformance());
+			assertEquals("http://www.hla.org/aaa/bindings/schemabindings.xml", mapping.getBinding().getValueSetUri());
 		} catch(RecognitionException re) {
 			fail();
 		}

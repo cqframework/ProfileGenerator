@@ -7,6 +7,7 @@ public class OneToOnePropertyMapping {
 	private String sourcePath;
 	private String destinationPath;
 	private String rationale;
+	private TerminologyBinding binding;
 	private boolean extension;
 	
 	public OneToOnePropertyMapping() {}
@@ -80,9 +81,52 @@ public class OneToOnePropertyMapping {
 		this.extension = extension;
 	}
 	
+	public TerminologyBinding getBinding() {
+		return binding;
+	}
+
+	public void setBinding(TerminologyBinding binding) {
+		this.binding = binding;
+	}
+
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(source).append("-->").append(destination).append("[Is extension: ").append(extension).append("]");
 		return builder.toString();
+	}
+	
+	public static class TerminologyBinding {
+		private String name;
+		private boolean isExtensible;
+		private String conformance;
+		private String valueSetUri; //TODO Change to URI later
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public boolean isExtensible() {
+			return isExtensible;
+		}
+		public void setExtensible(boolean isExtensible) {
+			this.isExtensible = isExtensible;
+		}
+		public String getConformance() {
+			return conformance;
+		}
+		public void setConformance(String conformance) {
+			this.conformance = conformance;
+		}
+		public String getValueSetUri() {
+			return valueSetUri;
+		}
+		public void setValueSetUri(String valueSetUri) {
+			this.valueSetUri = valueSetUri;
+		}
+		
+		public String toString() {
+			return conformance + "," + valueSetUri;
+		}
 	}
 }

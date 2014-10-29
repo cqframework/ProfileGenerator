@@ -1,21 +1,19 @@
 package org.socraticgrid.quick.fhir.profile;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.AliasRuleContext;
+import org.socraticgrid.quick.fhir.profile.FhirTagParser.BindingConformanceRuleContext;
+import org.socraticgrid.quick.fhir.profile.FhirTagParser.BindingReferenceRuleContext;
+import org.socraticgrid.quick.fhir.profile.FhirTagParser.BindingRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.CardinalityContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.ComplexTypeRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.ElementRuleContext;
@@ -25,6 +23,7 @@ import org.socraticgrid.quick.fhir.profile.FhirTagParser.HandleElementRuleContex
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.SimpleTypeRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.SkipElementRuleContext;
 import org.socraticgrid.uml.OneToOnePropertyMapping;
+import org.socraticgrid.uml.OneToOnePropertyMapping.TerminologyBinding;
 import org.socraticgrid.uml.TaggedValue;
 import org.socraticgrid.uml.UmlClass;
 import org.socraticgrid.uml.UmlProperty;
@@ -128,6 +127,27 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 	@Override
 	public void enterComplexTypeRule(ComplexTypeRuleContext ctx) {
 		mapping.getDestination().getTypes().clear(); //NOTE: If a type is specified in the tag, original types will be cleared.
+	}
+	
+	@Override
+	public void enterBindingRule(BindingRuleContext ctx) {
+		mapping.setBinding(new TerminologyBinding());
+	}
+
+	@Override
+	public void enterBindingReferenceRule(BindingReferenceRuleContext ctx) {
+        if ( ctx.url()!=null && mapping.getBinding() != null) {
+        	String url = ctx.url().getText();
+        	mapping.getBinding().setValueSetUri(url);
+        }
+	}
+
+	@Override
+	public void enterBindingConformanceRule(BindingConformanceRuleContext ctx) {
+		if ( ctx.conformanceValue()!=null && mapping.getBinding() != null) {
+        	String conformance = ctx.conformanceValue().getText();
+        	mapping.getBinding().setConformance(conformance);
+        }
 	}
 
 	protected UmlClass getSourceClassForProperty(String path) {//TODO Fix so that class is shared across all properties created thus

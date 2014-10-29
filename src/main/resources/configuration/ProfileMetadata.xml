@@ -1,17 +1,25 @@
 <profileMetadata>
     <sharedMetadata>
-        <profileRootPath>http://hl7.org/quick/profile/</profileRootPath>
+        <profileRootPath>http://hl7.org/fhir/Profile/</profileRootPath>
 	    <profileBaseVersion>0.0.1</profileBaseVersion>
-	    <profilePublisher>Clinical Quality Framework (CQF)</profilePublisher>
-	    <profileEmailContact>admin@cqf.org</profileEmailContact>
-	    <profileFhirVersion>dstu</profileFhirVersion>
+	    <profilePublisher>Health Level Seven, HL7 Clinical Quality Information (CQI) Working Group</profilePublisher>
+	    <profileContact>http://www.hl7.org/Special/committees/cqi/</profileContact>
+	    <profileFhirVersion>Development Snapshot</profileFhirVersion>
     </sharedMetadata>
     <profiles>
         <profile name="ConditionOccurrence">
             <profileText>a</profileText>
             <profileDescription>Profile for the QUICK ConditionOccurrence Class</profileDescription>
             <profileStatus>draft</profileStatus>
-            <profileRequirements>Profile shall do xyz</profileRequirements>
+            <profileRequirements>https://github.com/cqframework/OneModel</profileRequirements>
+            <constrainModifyingExtensions>Condition.location,Condition.stage,Condition.evidence,Condition.relatedItem</constrainModifyingExtensions>
+            <codedAttributeBindings>
+            	<codedAttributeBinding>
+            		<attributePath>Condition.status</attributePath>
+            		<conformance>required</conformance>
+            		<reference>http://hl7.org/quick/valuesets/123</reference>
+            	</codedAttributeBinding>
+            </codedAttributeBindings>
         </profile>
     </profiles>
 </profileMetadata>
