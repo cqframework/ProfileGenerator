@@ -31,11 +31,11 @@ import org.socraticgrid.uml.UmlModel;
  * @author cnanjo
  *
  */
-public class CommunicationProposalGenerationTest extends TestBase {
+public class ProcedureProposalTest extends TestBase {
 	
 	@Test
 	public void testGenerateConditionOccurrenceProfile() {
-		UmlClass conditionOccurrence = (UmlClass)model.getObjectByName("CommunicationProposalOccurrence");
+		UmlClass conditionOccurrence = (UmlClass)model.getObjectByName("ProcedureProposalOccurrence");
 		Profile profile = profileGenerator.generateSimpleProfile(conditionOccurrence, new UmlClass("Other"));
 		System.out.println(FhirProfileGenerator.generateProfileAsXml(profile));
 	}

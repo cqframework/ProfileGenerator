@@ -31,22 +31,7 @@ import org.socraticgrid.uml.UmlModel;
  * @author cnanjo
  *
  */
-public class ConditionOccurrenceGenerationTest {
-	
-	private FhirProfileGenerator profileGenerator;
-	private UmlModel model;
-	
-	
-	@Before
-	public void setup() {
-		try {
-			UmlModelLoader loader = new UmlModelLoader();
-			model = loader.loadModelFromClassPath("/xmi/QUICK.xmi");
-			profileGenerator = new FhirProfileGenerator();
-		} catch(Exception e) {
-			fail();
-		}
-	}
+public class ConditionOccurrenceGenerationTest extends TestBase {
 	
 	@Test
 	public void testGenerateConditionOccurrenceProfile() {
