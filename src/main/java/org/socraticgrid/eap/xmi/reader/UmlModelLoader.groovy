@@ -34,6 +34,12 @@ class UmlModelLoader {
 		return model
 	}
 	
+	def UmlModel loadModelFromFilePath(String path) {
+		UmlModel model = loadModel(loadFromFilePath,path)
+		model.buildIndex();
+		return model
+	}
+	
 	def UmlModel processModel(Node node) {
 		List<Node> modelNodes = new ArrayList<Node>()
 		ReaderUtils.findNodes(node, modelNodes, "Model")

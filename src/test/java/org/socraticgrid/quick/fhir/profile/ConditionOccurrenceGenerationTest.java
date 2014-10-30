@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,11 +17,8 @@ import org.hl7.fhir.instance.model.Profile.ElementDefinitionMappingComponent;
 import org.hl7.fhir.instance.model.Profile.ProfileExtensionDefnComponent;
 import org.hl7.fhir.instance.model.Profile.ProfileStructureComponent;
 import org.hl7.fhir.instance.model.Profile.TypeRefComponent;
-import org.junit.Before;
 import org.junit.Test;
-import org.socraticgrid.eap.xmi.reader.UmlModelLoader;
 import org.socraticgrid.uml.UmlClass;
-import org.socraticgrid.uml.UmlModel;
 
 /**
  * Test for the generation of the ConditionOccurrence FHIR profile.

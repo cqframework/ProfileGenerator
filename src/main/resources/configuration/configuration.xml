@@ -1,0 +1,12 @@
+<profileMetadataList>
+    <profileMetadata>
+        <name>Condition-ConditionOccurrence</name>
+        <source>ConditionOccurrence</source>
+        <target>Condition</target>
+    </profileMetadata>
+    <profileMetadata>
+        <name>Other-CommunicationProposalOccurrence</name>
+        <source>CommunicationProposalOccurrence</source>
+        <target>Other</target>
+    </profileMetadata>
+</profileMetadataList>

@@ -78,21 +78,6 @@ public class FhirClassAnnotationHandler {
 	}
 	
 	/**
-	 * Initialization method that:
-	 * 1. build indexes
-	 * 2. preprocesses attributes
-	 * 
-	 * This method must be called before the FhirClassAnnotationHandler can be used. This logic
-	 * was not placed in the constructor as any of these steps may trigger an exception.
-	 */
-	public void initialize() {
-		collectAndIndexProperties();
-		handleAttributeSplitting();
-		processClassScopedAttribute();
-		processClassLevelElementTags();
-	}
-	
-	/**
 	 * Processes each attribute for the given class and defines the mapping(s) to FHIR
 	 * based on the annotation associated with this property.
 	 * 
@@ -100,7 +85,7 @@ public class FhirClassAnnotationHandler {
 	 */
 	public List<OneToOnePropertyMapping> initializeMappings() {
 		collectAndIndexProperties();
-		processClassScopedAttributeNew();
+		processClassScopedAttribute();
 		return generateMappingsForClassProperties();
 	}
 	
@@ -170,27 +155,6 @@ public class FhirClassAnnotationHandler {
 		}
 	}
 	
-	public void handleAttributeSplitting() {
-		List<UmlProperty> union = new ArrayList<UmlProperty>();
-		List<UmlProperty> properties = getCollectedProperties();
-		Iterator<UmlProperty> propertyIterator = properties.iterator();
-		while(propertyIterator.hasNext()) {
-			UmlProperty property = propertyIterator.next();
-			if(FhirAttributeAnnotationHandler.requiresSplitting(property)) {
-				Collection<UmlProperty> splitProperties = FhirAttributeAnnotationHandler.split(property, umlClass.getModel());
-				union.addAll(splitProperties);
-				if(FhirAttributeAnnotationHandler.skip(property)) {
-					propertyIterator.remove();
-				}
-			}
-		}
-		for(UmlProperty attribute : union) {
-			attribute.buildTaggedValueIndex();
-		}
-		System.out.println(union);
-		getCollectedProperties().addAll(union);
-	}
-	
 	/**
 	 * Overrides cloned property-level tags with class-level tags.
 	 * Note: Original property in UML model is not affected.
@@ -207,44 +171,25 @@ public class FhirClassAnnotationHandler {
 	 * the existing tag if such a tag exists.</li>
 	 * </ol>
 	 * 
-	 */
-	public void processClassScopedAttribute() {
-		List<TaggedValue> tags = umlClass.getTags();
-		for(TaggedValue tag: tags) {
-			if(tag.getKey().startsWith("profile.fhir.element")) {
-				FhirAnnotation annotation = new FhirAnnotation(tag.getKey());
-				String context = annotation.get(3);
-				String attributeName = annotation.get(4);
-				UmlProperty attribute = getPropertyWithName(context + "." + attributeName);
-				if(attribute == null) {
-					throw new RuntimeException("Error! Property " + context + "." + attributeName + " does not exist in class " + umlClass.getName());
-				}
-				attribute.replaceTag(new TaggedValue(annotation.remove(3,4).toString(), tag.getValue()));
-			}
-		}
-	}
-	
-	/**
 	 * Note changes:
 	 * 2. clear tags
 	 * 3. Readd tag without truncating it.
 	 */
-	public void processClassScopedAttributeNew() {//TODO Replace others with this one
+	public void processClassScopedAttribute() {
 		List<TaggedValue> tags = umlClass.getTags();
 		for(TaggedValue tag: tags) {
 			if(!validateTag(tag)) {
 				throw new RuntimeException(tag + " has an invalid syntax!");
 			}
 			if(tag.getKey().startsWith("profile.fhir.element")) {
-				FhirAnnotation annotation = new FhirAnnotation(tag.getKey());
-				String context = annotation.get(3);
-				String attributeName = annotation.get(4);
-				UmlProperty attribute = getPropertyWithName(context + "." + attributeName);
+				String propertyPath = MappingAnnotationListener.getLHSPathExpression(tag);
+				UmlProperty attribute = getPropertyWithName(propertyPath);
 				if(attribute == null) {
-					throw new RuntimeException("Error! Property " + context + "." + attributeName + " does not exist in class " + umlClass.getName());
+					throw new RuntimeException("Error! Property " + propertyPath + " does not exist in class " + umlClass.getName());
 				}
-				attribute.getTags().clear();//override original tags - need to fix to only remove specific tags
-				attribute.addTag(tag);//adding class-level tag to property
+				TaggedValue overriddenTag = attribute.getTag(tag.getKey());
+				attribute.getTags().remove(overriddenTag);//Note: The original attribute tag is being overridden by the leaf-level class tag.
+				attribute.addTag(tag);
 			}
 		}
 	}

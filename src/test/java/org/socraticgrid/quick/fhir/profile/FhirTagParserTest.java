@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.AliasRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.CardinalityContext;
+import org.socraticgrid.quick.fhir.profile.FhirTagParser.ElementRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.EquivalentElementRuleContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.ExtensionContext;
 import org.socraticgrid.quick.fhir.profile.FhirTagParser.HandleElementRuleContext;
@@ -47,6 +48,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 	private final String bindingRuleExample = "conformance=required,  reference=http://www.hla.org/aaa/bindings/schemabindings.xml";
 	private final String parameterExample = "(cardinality=1..2, conformance=required, reference=http://www.hla.org/aaa/bindings/schemabindings.xml, extension=false)";
 	private final String debug1 = "profile.fhir.element.Procedure.procedureCode=DestinationConcept.typo(type=CodeableConcept,extension=true)";
+	private final String pathExpression1 = "profile.fhir.element.Procedure.procedureCode=DestinationConcept.procedureCode(type=CodeableConcept,extension=true)";
 	
 	private final UmlClass targetResource = new UmlClass("Condition");
 	private FhirTagParseErrorListener errorListener;
@@ -357,5 +359,10 @@ public class FhirTagParserTest {//TODO Add negative cases
 		String resource = MappingAnnotationListener.getContainingResource(canonicalPath);
 		assertEquals(0, errorListener.getParseErrorCount());
 		assertEquals("Condition", resource);
+	}
+	
+	@Test
+	public void testGetPathExpression() {
+		assertEquals("Procedure.procedureCode.value", MappingAnnotationListener.getLHSPathExpression(new TaggedValue("profile.fhir.element.Procedure.procedureCode.value","DestinationConcept.procedureCode(type=CodeableConcept,extension=true)")));
 	}
 }	

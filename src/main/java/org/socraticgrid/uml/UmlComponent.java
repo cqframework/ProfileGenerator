@@ -34,6 +34,10 @@ public abstract class UmlComponent implements Taggable, Identifiable {
 		return tags;
 	}
 	
+	public TaggedValue getTag(String key) {
+		return indexedLabels.get(key);
+	}
+	
 	public List<TaggedValue> getTagsWithPrefix(String prefix) {
 		List<TaggedValue> tagsWithPrefix = new ArrayList<TaggedValue>();
 		for(TaggedValue tag: tags) {

@@ -240,4 +240,13 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 		}
 		return mappings;
 	}
+	
+	/**
+	 * Returns the source attribute path in a mapping represented by a tagged value.
+	 */
+	public static String getLHSPathExpression(TaggedValue taggedValue) {
+		FhirTagParser parser = MappingAnnotationListener.setUpParser(taggedValue.toString(), null);
+		ElementRuleContext ctx = parser.elementRule();
+		return ctx.pathExpression(0).getText();
+	}
 }
