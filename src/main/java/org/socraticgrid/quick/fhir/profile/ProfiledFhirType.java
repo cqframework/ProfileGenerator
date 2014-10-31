@@ -18,7 +18,8 @@ public enum ProfiledFhirType {
 	DEVICE("Device"),
 	ORGANIZATION("Organization"),
 	RELATED_PERSON("RelatedPerson"),
-	ENCOUNTER("Encounter");
+	ENCOUNTER("Encounter"),
+	SCHEDULE("Schedule");
 	
 	private String name; 
 	

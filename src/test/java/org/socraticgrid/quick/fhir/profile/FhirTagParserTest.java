@@ -42,11 +42,11 @@ public class FhirTagParserTest {//TODO Add negative cases
 	private final String badTag1 = "profile.fhir.ClinicalStatement.statementAuthor=Other.author(extension=false)";
 	private final String structureName = "profile.fhir.structure.name=CommunicationProposalOccurrence";
 	private final String structurePurpose = "profile.fhir.structure.purpose=Represents a clinical statement stating that a communication proposal has been made.";
-	private final String bindingExample = "profile.fhir.element.Condition.code=Condition.code(cardinality=1..2, conformance=required, reference=http://www.hla.org/aaa/bindings/schemabindings.xml, extension=false)";
+	private final String bindingExample = "profile.fhir.element.Condition.code=Condition.code(cardinality=1..2, conformance=required, reference=\"http://www.hla.org/aaa/bindings/schemabindings.xml\", extension=false)";
 	private final String conformanceRuleExample = "conformance=required";
-	private final String referenceRuleExample = "reference=http://www.hla.org/aaa/bindings/schemabindings.xml";
-	private final String bindingRuleExample = "conformance=required,  reference=http://www.hla.org/aaa/bindings/schemabindings.xml";
-	private final String parameterExample = "(cardinality=1..2, conformance=required, reference=http://www.hla.org/aaa/bindings/schemabindings.xml, extension=false)";
+	private final String referenceRuleExample = "reference=\"http://www.hla.org/aaa/bindings/schemabindings.xml\"";
+	private final String bindingRuleExample = "conformance=required,  reference=\"http://www.hla.org/aaa/bindings/schemabindings.xml\"";
+	private final String parameterExample = "(cardinality=1..2, conformance=required, reference=\"http://www.hla.org/aaa/bindings/schemabindings.xml\", extension=false)";
 	private final String debug1 = "profile.fhir.element.Procedure.procedureCode=DestinationConcept.typo(type=CodeableConcept,extension=true)";
 	private final String pathExpression1 = "profile.fhir.element.Procedure.procedureCode=DestinationConcept.procedureCode(type=CodeableConcept,extension=true)";
 	
@@ -238,7 +238,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
 			assertEquals(0, errorListener.getParseErrorCount());
 			assertEquals("required", mapping.getBinding().getConformance());
-			assertEquals("http://www.hla.org/aaa/bindings/schemabindings.xml", mapping.getBinding().getValueSetUri());
+			assertEquals("\"http://www.hla.org/aaa/bindings/schemabindings.xml\"", mapping.getBinding().getValueSetUri());
 		} catch(RecognitionException re) {
 			fail();
 		}

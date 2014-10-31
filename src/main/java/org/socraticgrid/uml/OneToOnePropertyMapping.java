@@ -8,6 +8,7 @@ public class OneToOnePropertyMapping {
 	private String destinationPath;
 	private String rationale;
 	private TerminologyBinding binding;
+	private String destinationProfileName;
 	private boolean extension;
 	
 	public OneToOnePropertyMapping() {}
@@ -87,6 +88,14 @@ public class OneToOnePropertyMapping {
 
 	public void setBinding(TerminologyBinding binding) {
 		this.binding = binding;
+	}
+	
+	public String getDestinationProfileName() {
+		return destinationProfileName;
+	}
+
+	public void setDestinationProfileName(String destinationProfileName) {
+		this.destinationProfileName = destinationProfileName;
 	}
 
 	public String toString() {

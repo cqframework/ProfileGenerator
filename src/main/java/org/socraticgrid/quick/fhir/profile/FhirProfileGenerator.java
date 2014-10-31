@@ -59,9 +59,7 @@ public class FhirProfileGenerator {
 	//TODO Map effectiveTime to ObservedAtTime. Make statementDateTime an FHIR extension.
 	//TODO Convert markup to markdown
 	//TODO Implement reading tags from external file
-	//TODO fix URL grammar
 	//TODO fix truncation with path that contain 'type' (due to lexer rule)
-	//TODO introduce main method here or somewhere else that reads profile generation order from config file
 	
 	//QUESTION: Is modifyingExtension constraint valid? Do I need to do this for every attribute as well? How about their extensions? Do we just make part of spec to reject? What if attribute is required?
 	//QUESTION: Do we wish to use QUICK formal documentation on classes and attributes or leave the FHIR defaults?

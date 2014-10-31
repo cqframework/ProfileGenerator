@@ -5,6 +5,8 @@ public class ProfileGenerationMetadata {
 	private String name;
 	private String source;
 	private String target;
+	private boolean generateResourceDefinition;
+	private String resourceName;
 
 	public ProfileGenerationMetadata() {}
 	
@@ -37,6 +39,22 @@ public class ProfileGenerationMetadata {
 
 	public void setTarget(String target) {
 		this.target = target;
+	}
+	
+	public boolean isGenerateResourceDefinition() {
+		return generateResourceDefinition;
+	}
+
+	public void setGenerateResourceDefinition(boolean generateResourceDefinition) {
+		this.generateResourceDefinition = generateResourceDefinition;
+	}
+
+	public String getResourceName() {
+		return resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
 	}
 
 	@Override

@@ -2,15 +2,25 @@ package org.socraticgrid.quick.fhir.profile;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.hl7.fhir.instance.model.Profile;
+import org.socraticgrid.core.excel.FhirResourceDefinitionWriter;
 import org.socraticgrid.eap.xmi.reader.UmlModelLoader;
 import org.socraticgrid.uml.UmlClass;
 import org.socraticgrid.uml.UmlModel;
@@ -90,8 +100,12 @@ public class Main {
 				FhirProfileGenerator generator = new FhirProfileGenerator();
 				UmlClass conditionOccurrence = (UmlClass)model.getObjectByName(profileMeta.getSource());
 				Profile profile = generator.generateSimpleProfile(conditionOccurrence, new UmlClass(profileMeta.getTarget()));
+				FhirResourceDefinitionWriter resourceDefWriter = new FhirResourceDefinitionWriter(profileMeta.getResourceName(),profile, outputFolder.getCanonicalPath());
 				FileWriter writer = new FileWriter(profileFile);
 				writer.write(FhirProfileGenerator.generateProfileAsXml(profile));
+				if(profileMeta.isGenerateResourceDefinition()) {
+					resourceDefWriter.writeProfileAsResourceDefinition(profileMeta.getResourceName(), profile);
+				}
 				writer.close();
 			} catch(Exception e) {
 				throw new RuntimeException("Error generating profile.", e);
@@ -152,8 +166,10 @@ public class Main {
 				profileMetadataItem.setSource(node.getTextContent());
 			} else if(node.getNodeName().equals("target")) {
 				profileMetadataItem.setTarget(node.getTextContent());
-			} else {
-				throw new RuntimeException(node.getNodeName() + " is an invalid node name");
+			} else if(node.getNodeName().equals("generateResourceDefinition")) {
+				profileMetadataItem.setGenerateResourceDefinition(Boolean.parseBoolean(node.getTextContent()));
+			} else if(node.getNodeName().equals("proposedResourceName")) {
+				profileMetadataItem.setResourceName(node.getTextContent());
 			}
 		}
 	}

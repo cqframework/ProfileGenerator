@@ -3,10 +3,20 @@
         <name>Condition-ConditionOccurrence</name>
         <source>ConditionOccurrence</source>
         <target>Condition</target>
+        <generateResourceDefinition>false</generateResourceDefinition>
     </profileMetadata>
     <profileMetadata>
         <name>Other-CommunicationProposalOccurrence</name>
         <source>CommunicationProposalOccurrence</source>
         <target>Other</target>
+        <generateResourceDefinition>true</generateResourceDefinition>
+        <proposedResourceName>CommunicationRequest</proposedResourceName>
+    </profileMetadata>
+    <profileMetadata>
+        <name>Other-ProcedureProposalOccurrence</name>
+        <source>ProcedureProposalOccurrence</source>
+        <target>Other</target>
+        <generateResourceDefinition>true</generateResourceDefinition>
+        <proposedResourceName>ProcedureRequest</proposedResourceName>
     </profileMetadata>
 </profileMetadataList>

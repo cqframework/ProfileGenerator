@@ -50,7 +50,7 @@ structureTypeRule
 	;
 	
 profile
-	: PROFILE DELIM MODEL
+	: PROFILE DELIM (IDENTIFIER DELIM)? MODEL
 	;
 	
 profiledElement
@@ -125,7 +125,7 @@ high
 	;
 	
 url
-	: SCHEME + COLON + PATH_SEPARATOR + PATH_SEPARATOR IDENTIFIER (DELIM IDENTIFIER)* (PATH_SEPARATOR IDENTIFIER)* (DELIM IDENTIFIER)? //TODO address more generally later
+	: QUOTED_STRING //SCHEME + COLON + PATH_SEPARATOR + PATH_SEPARATOR IDENTIFIER (DELIM IDENTIFIER)* (PATH_SEPARATOR IDENTIFIER)* (DELIM IDENTIFIER)? //TODO address more generally later
 	;
 
 // Lexer Rules
@@ -241,6 +241,10 @@ CONFORMANCE
 	
 REFERENCE
 	: 'reference'
+	;
+	
+QUOTED_STRING
+	: '"' [a-zA-Z0-9:/.-_&;]+ '"'
 	;
 
 WS
