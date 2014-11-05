@@ -123,13 +123,13 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 	public void testNonExtendedAttributes(Map<String, ElementComponent> elementMap) {
 		assertFullDefinition(elementMap.get("asserter"), "asserter", "Condition.asserter", "ClinicalStatement.statementAuthor",0,"1");
 		HashMap<String,String> asserterMap = new HashMap<>();
-		asserterMap.put("Patient", "http://hl7.org/fhir/Profile/Patient");
-		asserterMap.put("Practitioner", "http://hl7.org/fhir/Profile/Practitioner");
+		asserterMap.put("Patient", "http://hl7.org/fhir/Profile/Patient-quick-Patient");
+		asserterMap.put("Practitioner", "http://hl7.org/fhir/Profile/Practitioner-quick-Practitioner");
 		assertMultipleProfiledType(asserterMap, elementMap.get("asserter"));
 		assertFullDefinition(elementMap.get("dateAsserted"), "dateAsserted", "Condition.dateAsserted", "Observation.observedAtTime",0,"1");
-		testSimpleType(elementMap.get("dateAsserted"), "Period");
+		testSimpleType(elementMap.get("dateAsserted"), "date");
 		assertFullDefinition(elementMap.get("location"), "location", "Condition.location", "Condition.location",0,"*");
-		testTypeProfile(elementMap.get("location"), "http://hl7.org/fhir/Profile/BodySite");
+		//testTypeProfile(elementMap.get("location"), "http://hl7.org/fhir/Profile/BodySite");
 	}
 	
 	public void testTransformationForEquivalentFields(Map<String, ElementComponent> elementMap) {
@@ -143,9 +143,9 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 	public void testTransformationForInheritedButEquivalentFields(Map<String, ElementComponent> elementMap) {
 		assertFullDefinition(elementMap.get("identifier"), "identifier", "Condition.identifier", "ClinicalStatement.identifier",0, "*");
 		assertFullDefinition(elementMap.get("subject"), "subject", "Condition.subject", "ClinicalStatement.subject", 1, "1");
-		assertSingleProfiledType(elementMap, "subject", "http://hl7.org/fhir/Profile/Patient", "Patient");
+		assertSingleProfiledType(elementMap, "subject", "http://hl7.org/fhir/Profile/Patient-quick-Patient", "Patient");
 		assertFullDefinition(elementMap.get("encounter"), "encounter", "Condition.encounter", "ClinicalStatement.encounter",0,"1");
-		assertSingleProfiledType(elementMap, "encounter", "http://hl7.org/fhir/Profile/Encounter", "Encounter");
+		assertSingleProfiledType(elementMap, "encounter", "http://hl7.org/fhir/Profile/Encounter-quick-Encounter", "Encounter");
 	}
 
 	public void testSimpleType(ElementComponent element, String code) {
@@ -238,7 +238,7 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location[BodySite].anatomicalLocation", mapping.getMapSimple());
+		assertEquals("Condition.location.anatomicalLocation", mapping.getMapSimple());
 	}
 	
 	public void testLocationLateralityGeneration(Map<String, ElementComponent> elementMap) {
@@ -254,7 +254,7 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location[BodySite].laterality", mapping.getMapSimple());
+		assertEquals("Condition.location.laterality", mapping.getMapSimple());
 	}
 	
 	public void testLocationDirectionalityGeneration(Map<String, ElementComponent> elementMap) {
@@ -270,7 +270,7 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location[BodySite].directionality", mapping.getMapSimple());
+		assertEquals("Condition.location.directionality", mapping.getMapSimple());
 	}
 	
 }

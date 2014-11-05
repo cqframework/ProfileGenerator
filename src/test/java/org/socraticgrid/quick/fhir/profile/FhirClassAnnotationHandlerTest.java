@@ -25,6 +25,7 @@ public class FhirClassAnnotationHandlerTest {
 			UmlModelLoader loader = new UmlModelLoader();
 			model = loader.loadModelFromClassPath("/xmi/QUICK.xmi");
 		} catch(Exception e) {
+			e.printStackTrace();
 			fail();
 		}
 	}

@@ -138,6 +138,7 @@ public class MappingAnnotationListener extends FhirTagBaseListener {
 	public void enterBindingReferenceRule(BindingReferenceRuleContext ctx) {
         if ( ctx.url()!=null && mapping.getBinding() != null) {
         	String url = ctx.url().getText();
+        	url = url.replaceAll("\"", "");
         	mapping.getBinding().setValueSetUri(url);
         }
 	}

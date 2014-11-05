@@ -238,7 +238,7 @@ public class FhirTagParserTest {//TODO Add negative cases
 			OneToOnePropertyMapping mapping = MappingAnnotationListener.retrieveMapping(parser, context, setUpProperty(), targetResource);
 			assertEquals(0, errorListener.getParseErrorCount());
 			assertEquals("required", mapping.getBinding().getConformance());
-			assertEquals("\"http://www.hla.org/aaa/bindings/schemabindings.xml\"", mapping.getBinding().getValueSetUri());
+			assertEquals("http://www.hla.org/aaa/bindings/schemabindings.xml", mapping.getBinding().getValueSetUri());
 		} catch(RecognitionException re) {
 			fail();
 		}

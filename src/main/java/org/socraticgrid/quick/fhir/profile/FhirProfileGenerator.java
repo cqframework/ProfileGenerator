@@ -60,6 +60,9 @@ public class FhirProfileGenerator {
 	//TODO Convert markup to markdown
 	//TODO Implement reading tags from external file
 	//TODO fix truncation with path that contain 'type' (due to lexer rule)
+	//TODO SHould we use CDATA block for XML definitions TBD
+	//TODO Should all coded fields have bindings?
+	//TODO Condition.effectiveDate - OnsetDate/AbatementDate - Compatible with FHIR
 	
 	//QUESTION: Is modifyingExtension constraint valid? Do I need to do this for every attribute as well? How about their extensions? Do we just make part of spec to reject? What if attribute is required?
 	//QUESTION: Do we wish to use QUICK formal documentation on classes and attributes or leave the FHIR defaults?
@@ -103,7 +106,7 @@ public class FhirProfileGenerator {
 	 * @param fhirClass
 	 */
 	public void populateProfileHeaderInformation(Profile profile, FhirClassAnnotationHandler fhirClass, ProfileMetadata metadata) {
-		profile.setUrlSimple(metadata.getSharedProperty("profileRootPath") + fhirClass.getTargetResource().getName() + "-" + fhirClass.getStructureName());
+		profile.setUrlSimple(metadata.getSharedProperty("profileRootPath") + fhirClass.getTargetResource().getName() + "-" + MAP_IDENTITY + "-" + fhirClass.getStructureName());
 		profile.setVersionSimple(metadata.getSharedProperty("profileBaseVersion"));
 		profile.setNameSimple(fhirClass.getStructureName());
 		profile.setPublisherSimple(metadata.getSharedProperty("profilePublisher"));
@@ -370,9 +373,9 @@ public class FhirProfileGenerator {
 			type.setCodeSimple(typeName);
 		} else if(hasProfiledFhirType(typeName)) { //TODO: Handle the case where the attribute has tag: profile.fhir.element.type.profile
 			type.setCodeSimple(ProfiledFhirType.getFhirTypeName(typeName));
-			type.setProfileSimple(QUICK_CORE_PROFILE_PATH + ProfiledFhirType.getFhirTypeName(typeName));
+			type.setProfileSimple(QUICK_CORE_PROFILE_PATH + ProfiledFhirType.getFhirTypeName(typeName) + "-quick-"+ ProfiledFhirType.getFhirTypeName(typeName));
 		} else  {
-			type.setProfileSimple(QUICK_CORE_PROFILE_PATH + typeName);
+			//Do nothing. For FHIR structures such as Condition.location, no need to specify a type.
 		}
 	}
 	

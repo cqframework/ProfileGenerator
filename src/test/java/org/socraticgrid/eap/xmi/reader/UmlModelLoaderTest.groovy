@@ -37,7 +37,12 @@ class UmlModelLoaderTest {
 		model.buildIndex();
 		UmlPackage topLevelPackage = model.getPackages().get(0);
 		UmlPackage secondLevelPackage = topLevelPackage.getPackages().get(0);
-		UmlPackage thirdLevelPackage = secondLevelPackage.getPackages().get(0);
+		UmlPackage thirdLevelPackage = null;
+		for(UmlPackage umlPackage: secondLevelPackage.getPackages()) {
+			if(umlPackage.getName() == "action") {
+				thirdLevelPackage = umlPackage;
+			}
+		}
 		assertEquals("EA_Model", model.getName())
 		assertEquals(1, model.getPackages().size())
 		assertEquals("Model",topLevelPackage.getName())
