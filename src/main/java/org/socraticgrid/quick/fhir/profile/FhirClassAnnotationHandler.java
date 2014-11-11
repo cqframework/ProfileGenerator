@@ -30,6 +30,9 @@ import org.socraticgrid.uml.UmlProperty;
  */
 public class FhirClassAnnotationHandler {
 	
+	public static final String FHIR_PROFILE_ELEMENT_SUFFIX = "profile.fhir.element.";
+	public static final String FHIR_PROFILE_STRUCTURE_SUFFIX = "profile.fhir.structure.";
+	
 	/**
 	 * The UML class we are processing.
 	 */
@@ -187,7 +190,12 @@ public class FhirClassAnnotationHandler {
 				if(attribute == null) {
 					throw new RuntimeException("Error! Property " + propertyPath + " does not exist in class " + umlClass.getName());
 				}
-				TaggedValue overriddenTag = attribute.getTag(tag.getKey());
+				if(propertyPath.equalsIgnoreCase("ClinicalStatement.subject")) {
+					System.out.println(attribute.getTags());
+					System.out.println(attribute);
+					System.out.println(FHIR_PROFILE_ELEMENT_SUFFIX + propertyPath);
+				}
+				TaggedValue overriddenTag = attribute.getTag(FHIR_PROFILE_ELEMENT_SUFFIX + propertyPath);//Reasonable assumption at this time given overriding mechanism.
 				attribute.getTags().remove(overriddenTag);//Note: The original attribute tag is being overridden by the leaf-level class tag.
 				attribute.addTag(tag);
 			}

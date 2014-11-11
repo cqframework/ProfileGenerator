@@ -25,7 +25,7 @@ public class MavenUtilsTest {
 	@Test
 	public void testGetResourceAsUrl() {
 		try {
-			URL url = MavenUtils.getResourceAsUrl("/xsd/fhir-all.xsd");
+			URL url = MavenUtils.getResourceAsUrl("/xsd/fhir-single.xsd");
 			assertTrue(true);
 			assertNotNull(url);
 			assertEquals("file", url.getProtocol());
