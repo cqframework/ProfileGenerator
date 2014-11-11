@@ -46,10 +46,10 @@ public class FhirResourceDefinitionWriter {
         data.put("2", new Object[] {resourceName, "", "Resource", "TBD", ""});
         for(int index = 0; index < elements.size(); index++) {
         	ElementComponent element = elements.get(index);
-        	if(element.getNameSimple().equalsIgnoreCase("modifierExtension")) {
+        	if(element.getName().equalsIgnoreCase("modifierExtension")) {
         		continue;
         	}
-        	data.put("" + (index + 3), new Object[] {resourceName + "." + element.getNameSimple(), getCardinality(element), getElementType(element), element.getDefinition().getFormalSimple(), getMapping(element)});
+        	data.put("" + (index + 3), new Object[] {resourceName + "." + element.getName(), getCardinality(element), getElementType(element), element.getDefinition().getFormal(), getMapping(element)});
         }
           
         ExcelWriter.buildRowFromListOfArrays(sheet, data);
@@ -60,7 +60,7 @@ public class FhirResourceDefinitionWriter {
 		List<ElementDefinitionMappingComponent> mappings = element.getDefinition().getMapping();
 		if(mappings.size() > 0) {
 			ElementDefinitionMappingComponent mapping = mappings.get(0);
-			return mapping.getMapSimple();
+			return mapping.getMap();
 		} else {
 			return null;
 		}
@@ -82,7 +82,7 @@ public class FhirResourceDefinitionWriter {
 		StringBuilder builder = new StringBuilder();
 		int size = 0;
 		List<TypeRefComponent> types = null;
-		ProfileExtensionDefnComponent extensionDef = extensionIndex.get(element.getNameSimple());
+		ProfileExtensionDefnComponent extensionDef = extensionIndex.get(element.getName());
 		if(extensionDef != null) {
 			types = extensionDef.getElement().get(0).getDefinition().getType();
 			size = types.size();
@@ -92,8 +92,8 @@ public class FhirResourceDefinitionWriter {
 		}
 		
 		for(int index = 0; index < size; index++) {
-			if(types.get(index).getCodeSimple() != null) {
-				builder.append(types.get(index).getCodeSimple());
+			if(types.get(index).getCode() != null) {
+				builder.append(types.get(index).getCode());
 				if(index < size - 1) {
 					builder.append("|");
 				}
@@ -101,21 +101,21 @@ public class FhirResourceDefinitionWriter {
 		}
 		
 		if(size == 0) {
-			builder.append(element.getNameSimple());
+			builder.append(element.getName());
 		}
 		return builder.toString();
 	}
 	
 	public String getCardinality(ElementComponent element) {
-		int low = element.getDefinition().getMinSimple();
-		String max = element.getDefinition().getMaxSimple();
+		int low = element.getDefinition().getMin();
+		String max = element.getDefinition().getMax();
 		return low + ".." + max;
 	}
 	
 	public void indexProfile(Profile profile) {
 		List<ProfileExtensionDefnComponent> extensions = profile.getExtensionDefn();
 		for(ProfileExtensionDefnComponent extension:extensions) {
-			extensionIndex.put(extension.getCodeSimple(), extension);
+			extensionIndex.put(extension.getName(), extension);
 		}
 	}
 

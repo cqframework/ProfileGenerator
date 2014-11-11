@@ -20,6 +20,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.hl7.fhir.instance.model.Profile;
+import org.socraticgrid.core.MavenUtils;
+import org.socraticgrid.core.XmlUtils;
 import org.socraticgrid.core.excel.FhirResourceDefinitionWriter;
 import org.socraticgrid.eap.xmi.reader.UmlModelLoader;
 import org.socraticgrid.uml.UmlClass;
@@ -102,11 +104,16 @@ public class Main {
 				Profile profile = generator.generateSimpleProfile(conditionOccurrence, new UmlClass(profileMeta.getTarget()));
 				FhirResourceDefinitionWriter resourceDefWriter = new FhirResourceDefinitionWriter(profileMeta.getResourceName(),profile, outputFolder.getCanonicalPath());
 				FileWriter writer = new FileWriter(profileFile);
-				writer.write(FhirProfileGenerator.generateProfileAsXml(profile));
+				String profileXml = FhirProfileGenerator.generateProfileAsXml(profile);
+				writer.write(profileXml);
 				if(profileMeta.isGenerateResourceDefinition()) {
 					resourceDefWriter.writeProfileAsResourceDefinition(profileMeta.getResourceName(), profile);
 				}
 				writer.close();
+				boolean isValidProfile = XmlUtils.validate(MavenUtils.getResourceAsUrl("/xsd/fhir-single.xsd"), profileXml);
+				if(!isValidProfile) {
+					throw new RuntimeException("Profile is not valid XML");
+				}
 			} catch(Exception e) {
 				throw new RuntimeException("Error generating profile.", e);
 			}

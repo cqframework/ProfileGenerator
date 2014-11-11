@@ -96,7 +96,8 @@
 		</dependency>
 		<dependency>
 			<groupId>fhir.me</groupId>
-			<artifactId>tools</artifactId>
+			<!--<artifactId>tools</artifactId>-->
+			<artifactId>devtools</artifactId>
 			<version>0.8</version>
 		</dependency>
 		<dependency>
@@ -109,10 +110,37 @@
 		    <artifactId>poi</artifactId>
 		    <version>3.9</version>
 		</dependency>
+		<!--  Start of FHIR Ref Impl Dependencies -->
 		<dependency>
 		    <groupId>org.apache.poi</groupId>
 		    <artifactId>poi-ooxml</artifactId>
 		    <version>3.9</version>
 		</dependency>
+	    <dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.9</version>                
+	    </dependency>
+	    <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+	    <dependency>
+	        <groupId>com.google.code.gson</groupId>
+	        <artifactId>gson</artifactId>
+	        <version>2.3</version>
+	    </dependency>
+	    <dependency>
+		     <groupId>xpp3</groupId>
+		     <artifactId>xpp3</artifactId>
+		     <version>1.1.4c</version>                          
+	    </dependency>
+	    <dependency>
+		    <groupId>net.sf.saxon</groupId>
+		    <artifactId>saxon</artifactId>
+		    <version>8.7</version>
+		</dependency>
+		<!--  End of FHIR Ref Impl Dependencies -->
   </dependencies>
 </project>

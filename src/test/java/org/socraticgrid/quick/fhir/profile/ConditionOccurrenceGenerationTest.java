@@ -50,7 +50,7 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 	public void assertExtensionDefinition(ProfileExtensionDefnComponent extension) {
 		ElementComponent element = extension.getElement().get(0);
 		ElementDefinitionComponent definition = element.getDefinition();
-		assertNotNull(extension.getCode());
+		assertNotNull(extension.getName());
 		assertNotNull(extension.getDisplay());
 		assertNotNull(extension.getContextType());
 		assertNotNull(extension.getContext());
@@ -80,11 +80,11 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		assertEquals(30, elements.size());
 		Map<String,ElementComponent> elementMap = new HashMap<String,ElementComponent>();
 		for(ElementComponent item : elements) {
-			ElementComponent exists = elementMap.get(item.getNameSimple());
+			ElementComponent exists = elementMap.get(item.getName());
 			if(exists != null) {
-				elementMap.put(item.getNameSimple()+".2", item);//TODO Fix
+				elementMap.put(item.getName()+".2", item);//TODO Fix
 			} else {
-				elementMap.put(item.getNameSimple(), item);
+				elementMap.put(item.getName(), item);
 			}
 		}
 		testRootElement(elementMap);
@@ -103,21 +103,21 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		ElementDefinitionComponent definition = root.getDefinition();
 		List<TypeRefComponent> types = definition.getType();
 		assertEquals(1, types.size());
-		assertEquals("Resource", types.get(0).getCodeSimple());
+		assertEquals("Resource", types.get(0).getCode());
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("ConditionOccurrence", mapping.getMapSimple());
-		assertEquals(1, definition.getMinSimple());
-		assertEquals("1", definition.getMaxSimple());
+		assertEquals("ConditionOccurrence", mapping.getMap());
+		assertEquals(1, definition.getMin());
+		assertEquals("1", definition.getMax());
 	}
 	
 	public void testModifierExtensionConstraint(Map<String, ElementComponent> elementMap) {
 		ElementComponent modifierExtension = elementMap.get("modifierExtension");
 		assertNotNull(modifierExtension);
 		ElementDefinitionComponent definition = modifierExtension.getDefinition();
-		assertEquals(0, definition.getMinSimple());
-		assertEquals("0", definition.getMaxSimple());
+		assertEquals(0, definition.getMin());
+		assertEquals("0", definition.getMax());
 	}
 	
 	public void testNonExtendedAttributes(Map<String, ElementComponent> elementMap) {
@@ -150,27 +150,27 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 
 	public void testSimpleType(ElementComponent element, String code) {
 		TypeRefComponent type = element.getDefinition().getType().get(0);
-		assertEquals(code, type.getCodeSimple());
+		assertEquals(code, type.getCode());
 	}
 	
 	public void testTypeProfile(ElementComponent element, String profile) {
 		TypeRefComponent type = element.getDefinition().getType().get(0);
-		assertEquals(profile, type.getProfileSimple());
+		assertEquals(profile, type.getProfile());
 	}
 	
 	public void assertSingleProfiledType(Map<String, ElementComponent> elementMap, String name, String profile, String code) {
 		ElementComponent element = elementMap.get(name);
 		List<TypeRefComponent> types = element.getDefinition().getType();
-		assertEquals(profile, types.get(0).getProfileSimple());
-		assertEquals(code, types.get(0).getCodeSimple());
+		assertEquals(profile, types.get(0).getProfile());
+		assertEquals(code, types.get(0).getCode());
 	}
 	
 	public void assertMultipleProfiledType(Map<String,String> typeMap, ElementComponent element) {
 		List<TypeRefComponent> types = element.getDefinition().getType();
 		assertEquals(types.size(), typeMap.size());
 		for(TypeRefComponent type : types) {
-			String code = type.getCodeSimple();
-			String profile = type.getProfileSimple();
+			String code = type.getCode();
+			String profile = type.getProfile();
 			assertNotNull(typeMap.get(code));
 			if(typeMap.containsKey(code)) {
 				assertEquals(profile, typeMap.get(code));
@@ -180,18 +180,18 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 	
 	public void assertFullDefinition(ElementComponent element, String name, String path, String mapping, int low, String high) {
 		assertNotNull(element);
-		assertEquals(name, element.getNameSimple());
-		assertEquals(path, element.getPathSimple());
-		assertEquals(low, element.getDefinition().getMinSimple());
-		assertEquals(high, element.getDefinition().getMaxSimple());
+		assertEquals(name, element.getName());
+		assertEquals(path, element.getPath());
+		assertEquals(low, element.getDefinition().getMin());
+		assertEquals(high, element.getDefinition().getMax());
 		assertNotNull(element.getDefinition().getFormal());
 		assertTrue(element.getDefinition().getMapping().size() == 1);
 		assertMapping(element, mapping);
 	}
 	
 	public void assertMapping(ElementComponent element, String path) {
-		assertEquals(path, element.getDefinition().getMapping().get(0).getMapSimple());
-		assertEquals("quick", element.getDefinition().getMapping().get(0).getIdentitySimple());
+		assertEquals(path, element.getDefinition().getMapping().get(0).getMap());
+		assertEquals("quick", element.getDefinition().getMapping().get(0).getIdentity());
 	}
 	
 	public void testTransformationForFhirExtensions(Map<String, ElementComponent> elementMap) {
@@ -203,10 +203,10 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 	}
 	
 	public void assertExtensionElementDefinition(ElementComponent element, String name, String quickPath) {
-		assertEquals(name, element.getNameSimple());
-		assertEquals("Condition.extension", element.getPathSimple());
-		assertEquals("Extension", element.getDefinition().getType().get(0).getCodeSimple());
-		assertEquals("#" + name, element.getDefinition().getType().get(0).getProfileSimple());
+		assertEquals(name, element.getName());
+		assertEquals("Condition.extension", element.getPath());
+		assertEquals("Extension", element.getDefinition().getType().get(0).getCode());
+		assertEquals("#" + name, element.getDefinition().getType().get(0).getProfile());
 		assertMapping(element, quickPath);
 	}
 	
@@ -234,43 +234,43 @@ public class ConditionOccurrenceGenerationTest extends TestBase {
 		ElementDefinitionComponent definition = locationCode.getDefinition();
 		List<TypeRefComponent> types = definition.getType();
 		assertEquals(1, types.size());
-		assertEquals("CodeableConcept", types.get(0).getCodeSimple());
+		assertEquals("CodeableConcept", types.get(0).getCode());
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location.anatomicalLocation", mapping.getMapSimple());
+		assertEquals("Condition.location.anatomicalLocation", mapping.getMap());
 	}
 	
 	public void testLocationLateralityGeneration(Map<String, ElementComponent> elementMap) {
 		ElementComponent locationCode = elementMap.get("location.laterality");
 		assertNotNull(locationCode);
-		assertEquals("Condition.location.extension", locationCode.getPathSimple());
-		assertEquals("location.laterality", locationCode.getNameSimple());
+		assertEquals("Condition.location.extension", locationCode.getPath());
+		assertEquals("location.laterality", locationCode.getName());
 		ElementDefinitionComponent definition = locationCode.getDefinition();
 		List<TypeRefComponent> types = definition.getType();
 		assertEquals(1, types.size());
-		assertEquals("Extension", types.get(0).getCodeSimple());
-		assertEquals("#location.laterality", types.get(0).getProfileSimple());
+		assertEquals("Extension", types.get(0).getCode());
+		assertEquals("#location.laterality", types.get(0).getProfile());
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location.laterality", mapping.getMapSimple());
+		assertEquals("Condition.location.laterality", mapping.getMap());
 	}
 	
 	public void testLocationDirectionalityGeneration(Map<String, ElementComponent> elementMap) {
 		ElementComponent locationCode = elementMap.get("location.directionality");
 		assertNotNull(locationCode);
-		assertEquals("Condition.location.extension", locationCode.getPathSimple());
-		assertEquals("location.directionality", locationCode.getNameSimple());
+		assertEquals("Condition.location.extension", locationCode.getPath());
+		assertEquals("location.directionality", locationCode.getName());
 		ElementDefinitionComponent definition = locationCode.getDefinition();
 		List<TypeRefComponent> types = definition.getType();
 		assertEquals(1, types.size());
-		assertEquals("Extension", types.get(0).getCodeSimple());
-		assertEquals("#location.directionality", types.get(0).getProfileSimple());
+		assertEquals("Extension", types.get(0).getCode());
+		assertEquals("#location.directionality", types.get(0).getProfile());
 		List<ElementDefinitionMappingComponent> mappings = definition.getMapping();
 		assertEquals(1, mappings.size());
 		ElementDefinitionMappingComponent mapping = mappings.get(0);
-		assertEquals("Condition.location.directionality", mapping.getMapSimple());
+		assertEquals("Condition.location.directionality", mapping.getMap());
 	}
 	
 }

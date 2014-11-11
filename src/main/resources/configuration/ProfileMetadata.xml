@@ -4,7 +4,7 @@
 	    <profileBaseVersion>0.0.1</profileBaseVersion>
 	    <profilePublisher>Health Level Seven, HL7 Clinical Quality Information (CQI) Working Group</profilePublisher>
 	    <profileContact>http://www.hl7.org/Special/committees/cqi/</profileContact>
-	    <profileFhirVersion>Development Snapshot</profileFhirVersion>
+	    <profileFhirVersion>dev</profileFhirVersion>
     </sharedMetadata>
     <profiles>
         <profile name="ConditionOccurrence">

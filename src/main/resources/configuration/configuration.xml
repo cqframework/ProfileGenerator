@@ -19,4 +19,24 @@
         <generateResourceDefinition>true</generateResourceDefinition>
         <proposedResourceName>ProcedureRequest</proposedResourceName>
     </profileMetadata>
+    <profileMetadata>
+        <name>Other-DeviceUseProposalOccurrence</name>
+        <source>DeviceUseProposalOccurrence</source>
+        <target>Other</target>
+        <generateResourceDefinition>true</generateResourceDefinition>
+        <proposedResourceName>DeviceUseRequest</proposedResourceName>
+    </profileMetadata>
+    <profileMetadata>
+        <name>Other-DeviceUsePerformanceOccurrence</name>
+        <source>DeviceUsePerformanceOccurrence</source>
+        <target>Other</target>
+        <generateResourceDefinition>true</generateResourceDefinition>
+        <proposedResourceName>DeviceUse</proposedResourceName>
+    </profileMetadata>
+    <profileMetadata>
+        <name>Other-ProcedureProposalOccurrence</name>
+        <source>ProcedureProposalOccurrence</source>
+        <target>Other</target>
+        <generateResourceDefinition>false</generateResourceDefinition>
+    </profileMetadata>
 </profileMetadataList>
